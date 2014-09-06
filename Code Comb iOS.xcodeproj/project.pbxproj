@@ -1,0 +1,471 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		01761C0719BB3FEF000C4998 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01761C0619BB3FEF000C4998 /* Foundation.framework */; };
+		01761C0919BB3FEF000C4998 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01761C0819BB3FEF000C4998 /* CoreGraphics.framework */; };
+		01761C0B19BB3FEF000C4998 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01761C0A19BB3FEF000C4998 /* UIKit.framework */; };
+		01761C1119BB3FEF000C4998 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 01761C0F19BB3FEF000C4998 /* InfoPlist.strings */; };
+		01761C1319BB3FEF000C4998 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 01761C1219BB3FEF000C4998 /* main.m */; };
+		01761C1719BB3FEF000C4998 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 01761C1619BB3FEF000C4998 /* AppDelegate.m */; };
+		01761C1A19BB3FEF000C4998 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01761C1819BB3FEF000C4998 /* Main.storyboard */; };
+		01761C1D19BB3FEF000C4998 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01761C1C19BB3FEF000C4998 /* ViewController.m */; };
+		01761C1F19BB3FEF000C4998 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01761C1E19BB3FEF000C4998 /* Images.xcassets */; };
+		01761C2619BB3FEF000C4998 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01761C2519BB3FEF000C4998 /* XCTest.framework */; };
+		01761C2719BB3FEF000C4998 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01761C0619BB3FEF000C4998 /* Foundation.framework */; };
+		01761C2819BB3FEF000C4998 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01761C0A19BB3FEF000C4998 /* UIKit.framework */; };
+		01761C3019BB3FEF000C4998 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 01761C2E19BB3FEF000C4998 /* InfoPlist.strings */; };
+		01761C3219BB3FEF000C4998 /* Code_Comb_iOSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 01761C3119BB3FEF000C4998 /* Code_Comb_iOSTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		01761C2919BB3FEF000C4998 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 01761BFB19BB3FEF000C4998 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 01761C0219BB3FEF000C4998;
+			remoteInfo = "Code Comb iOS";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		01761C0319BB3FEF000C4998 /* Code Comb iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Code Comb iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		01761C0619BB3FEF000C4998 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		01761C0819BB3FEF000C4998 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		01761C0A19BB3FEF000C4998 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		01761C0E19BB3FEF000C4998 /* Code Comb iOS-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Code Comb iOS-Info.plist"; sourceTree = "<group>"; };
+		01761C1019BB3FEF000C4998 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		01761C1219BB3FEF000C4998 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		01761C1419BB3FEF000C4998 /* Code Comb iOS-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Code Comb iOS-Prefix.pch"; sourceTree = "<group>"; };
+		01761C1519BB3FEF000C4998 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		01761C1619BB3FEF000C4998 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		01761C1919BB3FEF000C4998 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		01761C1B19BB3FEF000C4998 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		01761C1C19BB3FEF000C4998 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		01761C1E19BB3FEF000C4998 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		01761C2419BB3FEF000C4998 /* Code Comb iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Code Comb iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		01761C2519BB3FEF000C4998 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		01761C2D19BB3FEF000C4998 /* Code Comb iOSTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Code Comb iOSTests-Info.plist"; sourceTree = "<group>"; };
+		01761C2F19BB3FEF000C4998 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		01761C3119BB3FEF000C4998 /* Code_Comb_iOSTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Code_Comb_iOSTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		01761C0019BB3FEF000C4998 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				01761C0919BB3FEF000C4998 /* CoreGraphics.framework in Frameworks */,
+				01761C0B19BB3FEF000C4998 /* UIKit.framework in Frameworks */,
+				01761C0719BB3FEF000C4998 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		01761C2119BB3FEF000C4998 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				01761C2619BB3FEF000C4998 /* XCTest.framework in Frameworks */,
+				01761C2819BB3FEF000C4998 /* UIKit.framework in Frameworks */,
+				01761C2719BB3FEF000C4998 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		01761BFA19BB3FEF000C4998 = {
+			isa = PBXGroup;
+			children = (
+				01761C0C19BB3FEF000C4998 /* Code Comb iOS */,
+				01761C2B19BB3FEF000C4998 /* Code Comb iOSTests */,
+				01761C0519BB3FEF000C4998 /* Frameworks */,
+				01761C0419BB3FEF000C4998 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		01761C0419BB3FEF000C4998 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				01761C0319BB3FEF000C4998 /* Code Comb iOS.app */,
+				01761C2419BB3FEF000C4998 /* Code Comb iOSTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		01761C0519BB3FEF000C4998 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				01761C0619BB3FEF000C4998 /* Foundation.framework */,
+				01761C0819BB3FEF000C4998 /* CoreGraphics.framework */,
+				01761C0A19BB3FEF000C4998 /* UIKit.framework */,
+				01761C2519BB3FEF000C4998 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		01761C0C19BB3FEF000C4998 /* Code Comb iOS */ = {
+			isa = PBXGroup;
+			children = (
+				01761C1519BB3FEF000C4998 /* AppDelegate.h */,
+				01761C1619BB3FEF000C4998 /* AppDelegate.m */,
+				01761C1819BB3FEF000C4998 /* Main.storyboard */,
+				01761C1B19BB3FEF000C4998 /* ViewController.h */,
+				01761C1C19BB3FEF000C4998 /* ViewController.m */,
+				01761C1E19BB3FEF000C4998 /* Images.xcassets */,
+				01761C0D19BB3FEF000C4998 /* Supporting Files */,
+			);
+			path = "Code Comb iOS";
+			sourceTree = "<group>";
+		};
+		01761C0D19BB3FEF000C4998 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				01761C0E19BB3FEF000C4998 /* Code Comb iOS-Info.plist */,
+				01761C0F19BB3FEF000C4998 /* InfoPlist.strings */,
+				01761C1219BB3FEF000C4998 /* main.m */,
+				01761C1419BB3FEF000C4998 /* Code Comb iOS-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		01761C2B19BB3FEF000C4998 /* Code Comb iOSTests */ = {
+			isa = PBXGroup;
+			children = (
+				01761C3119BB3FEF000C4998 /* Code_Comb_iOSTests.m */,
+				01761C2C19BB3FEF000C4998 /* Supporting Files */,
+			);
+			path = "Code Comb iOSTests";
+			sourceTree = "<group>";
+		};
+		01761C2C19BB3FEF000C4998 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				01761C2D19BB3FEF000C4998 /* Code Comb iOSTests-Info.plist */,
+				01761C2E19BB3FEF000C4998 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		01761C0219BB3FEF000C4998 /* Code Comb iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 01761C3519BB3FEF000C4998 /* Build configuration list for PBXNativeTarget "Code Comb iOS" */;
+			buildPhases = (
+				01761BFF19BB3FEF000C4998 /* Sources */,
+				01761C0019BB3FEF000C4998 /* Frameworks */,
+				01761C0119BB3FEF000C4998 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Code Comb iOS";
+			productName = "Code Comb iOS";
+			productReference = 01761C0319BB3FEF000C4998 /* Code Comb iOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+		01761C2319BB3FEF000C4998 /* Code Comb iOSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 01761C3819BB3FEF000C4998 /* Build configuration list for PBXNativeTarget "Code Comb iOSTests" */;
+			buildPhases = (
+				01761C2019BB3FEF000C4998 /* Sources */,
+				01761C2119BB3FEF000C4998 /* Frameworks */,
+				01761C2219BB3FEF000C4998 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				01761C2A19BB3FEF000C4998 /* PBXTargetDependency */,
+			);
+			name = "Code Comb iOSTests";
+			productName = "Code Comb iOSTests";
+			productReference = 01761C2419BB3FEF000C4998 /* Code Comb iOSTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		01761BFB19BB3FEF000C4998 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Code Comb";
+				TargetAttributes = {
+					01761C2319BB3FEF000C4998 = {
+						TestTargetID = 01761C0219BB3FEF000C4998;
+					};
+				};
+			};
+			buildConfigurationList = 01761BFE19BB3FEF000C4998 /* Build configuration list for PBXProject "Code Comb iOS" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 01761BFA19BB3FEF000C4998;
+			productRefGroup = 01761C0419BB3FEF000C4998 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				01761C0219BB3FEF000C4998 /* Code Comb iOS */,
+				01761C2319BB3FEF000C4998 /* Code Comb iOSTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		01761C0119BB3FEF000C4998 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				01761C1F19BB3FEF000C4998 /* Images.xcassets in Resources */,
+				01761C1119BB3FEF000C4998 /* InfoPlist.strings in Resources */,
+				01761C1A19BB3FEF000C4998 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		01761C2219BB3FEF000C4998 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				01761C3019BB3FEF000C4998 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		01761BFF19BB3FEF000C4998 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				01761C1D19BB3FEF000C4998 /* ViewController.m in Sources */,
+				01761C1719BB3FEF000C4998 /* AppDelegate.m in Sources */,
+				01761C1319BB3FEF000C4998 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		01761C2019BB3FEF000C4998 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				01761C3219BB3FEF000C4998 /* Code_Comb_iOSTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		01761C2A19BB3FEF000C4998 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 01761C0219BB3FEF000C4998 /* Code Comb iOS */;
+			targetProxy = 01761C2919BB3FEF000C4998 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		01761C0F19BB3FEF000C4998 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				01761C1019BB3FEF000C4998 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		01761C1819BB3FEF000C4998 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				01761C1919BB3FEF000C4998 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		01761C2E19BB3FEF000C4998 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				01761C2F19BB3FEF000C4998 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		01761C3319BB3FEF000C4998 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		01761C3419BB3FEF000C4998 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		01761C3619BB3FEF000C4998 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Code Comb iOS/Code Comb iOS-Prefix.pch";
+				INFOPLIST_FILE = "Code Comb iOS/Code Comb iOS-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		01761C3719BB3FEF000C4998 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Code Comb iOS/Code Comb iOS-Prefix.pch";
+				INFOPLIST_FILE = "Code Comb iOS/Code Comb iOS-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		01761C3919BB3FEF000C4998 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Code Comb iOS.app/Code Comb iOS";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Code Comb iOS/Code Comb iOS-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Code Comb iOSTests/Code Comb iOSTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		01761C3A19BB3FEF000C4998 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Code Comb iOS.app/Code Comb iOS";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Code Comb iOS/Code Comb iOS-Prefix.pch";
+				INFOPLIST_FILE = "Code Comb iOSTests/Code Comb iOSTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		01761BFE19BB3FEF000C4998 /* Build configuration list for PBXProject "Code Comb iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				01761C3319BB3FEF000C4998 /* Debug */,
+				01761C3419BB3FEF000C4998 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		01761C3519BB3FEF000C4998 /* Build configuration list for PBXNativeTarget "Code Comb iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				01761C3619BB3FEF000C4998 /* Debug */,
+				01761C3719BB3FEF000C4998 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		01761C3819BB3FEF000C4998 /* Build configuration list for PBXNativeTarget "Code Comb iOSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				01761C3919BB3FEF000C4998 /* Debug */,
+				01761C3A19BB3FEF000C4998 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 01761BFB19BB3FEF000C4998 /* Project object */;
+}
