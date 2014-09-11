@@ -10,6 +10,7 @@
 		015AB00719C1A7A800864EFE /* NavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 015AB00619C1A7A800864EFE /* NavigationController.m */; };
 		015AB00A19C1CAE100864EFE /* ContestListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 015AB00919C1CAE100864EFE /* ContestListController.m */; };
 		015AB00D19C1CE3600864EFE /* WebAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 015AB00C19C1CE3600864EFE /* WebAPI.m */; };
+		015AB01019C1E91F00864EFE /* LoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = 015AB00F19C1E91F00864EFE /* LoginController.m */; };
 		01761C0719BB3FEF000C4998 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01761C0619BB3FEF000C4998 /* Foundation.framework */; };
 		01761C0919BB3FEF000C4998 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01761C0819BB3FEF000C4998 /* CoreGraphics.framework */; };
 		01761C0B19BB3FEF000C4998 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01761C0A19BB3FEF000C4998 /* UIKit.framework */; };
@@ -42,6 +43,8 @@
 		015AB00919C1CAE100864EFE /* ContestListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContestListController.m; sourceTree = "<group>"; };
 		015AB00B19C1CE3600864EFE /* WebAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebAPI.h; sourceTree = "<group>"; };
 		015AB00C19C1CE3600864EFE /* WebAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebAPI.m; sourceTree = "<group>"; };
+		015AB00E19C1E91F00864EFE /* LoginController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginController.h; sourceTree = "<group>"; };
+		015AB00F19C1E91F00864EFE /* LoginController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginController.m; sourceTree = "<group>"; };
 		01761C0319BB3FEF000C4998 /* Code Comb iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Code Comb iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		01761C0619BB3FEF000C4998 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		01761C0819BB3FEF000C4998 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -129,6 +132,8 @@
 				015AB00919C1CAE100864EFE /* ContestListController.m */,
 				015AB00B19C1CE3600864EFE /* WebAPI.h */,
 				015AB00C19C1CE3600864EFE /* WebAPI.m */,
+				015AB00E19C1E91F00864EFE /* LoginController.h */,
+				015AB00F19C1E91F00864EFE /* LoginController.m */,
 			);
 			path = "Code Comb iOS";
 			sourceTree = "<group>";
@@ -264,6 +269,7 @@
 				01761C1719BB3FEF000C4998 /* AppDelegate.m in Sources */,
 				015AB00A19C1CAE100864EFE /* ContestListController.m in Sources */,
 				01761C1319BB3FEF000C4998 /* main.m in Sources */,
+				015AB01019C1E91F00864EFE /* LoginController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

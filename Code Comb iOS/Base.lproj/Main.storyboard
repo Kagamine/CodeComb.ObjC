@@ -4,10 +4,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
-        <!--View Controller - Login-->
+        <!--Login Controller - 登录-->
         <scene sceneID="WQJ-sJ-x0m">
             <objects>
-                <viewController title="Login" id="tpw-hB-a1E" sceneMemberID="viewController">
+                <viewController title="登录" id="tpw-hB-a1E" customClass="LoginController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ECN-GX-fkA"/>
                         <viewControllerLayoutGuide type="bottom" id="RwC-af-Rgg"/>
@@ -61,7 +61,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="KsF-m6-A0A" kind="modal" modalTransitionStyle="flipHorizontal" id="cSn-tL-SHw"/>
+                                    <action selector="login:" destination="tpw-hB-a1E" eventType="touchUpInside" id="v65-f0-9cC"/>
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We Build Magic" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yKC-HI-rrl">
@@ -129,6 +129,12 @@
                             <constraint firstAttribute="centerY" secondItem="Mph-Zg-BcN" secondAttribute="centerY" constant="20" id="xUL-G1-H3r"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="swRememberPassword" destination="oNn-oa-fko" id="xn2-kY-je8"/>
+                        <outlet property="txtPassword" destination="Mph-Zg-BcN" id="pew-Cc-elw"/>
+                        <outlet property="txtUsername" destination="sON-P4-Bzg" id="MDI-jT-Rde"/>
+                        <segue destination="KsF-m6-A0A" kind="modal" identifier="Login" modalTransitionStyle="flipHorizontal" id="OmT-eG-UaH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qd5-8E-E1t" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -153,10 +159,10 @@
             </objects>
             <point key="canvasLocation" x="2391" y="-583"/>
         </scene>
-        <!--Table View Controller - 比赛-->
+        <!--Contest List Controller - 比赛-->
         <scene sceneID="ftJ-vF-w6l">
             <objects>
-                <tableViewController id="QLA-HD-tb9" sceneMemberID="viewController">
+                <tableViewController id="QLA-HD-tb9" customClass="ContestListController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="n4f-T8-neo">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

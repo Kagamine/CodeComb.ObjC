@@ -10,6 +10,10 @@
 
 @interface WebAPI : NSObject
 
-+ (void)GetContestsInPage:(NSNumber *)page completionHandler:(void(^)(BOOL success, NSString *info, NSArray *contests))handler;
+typedef void (^WebAPICompletionHandler)(NSInteger code,BOOL success,NSString *info,id data);
+
++ (void)getContestsInPage:(NSNumber *)page completionHandler:(WebAPICompletionHandler)handler;
++ (void)authWithUsername:(NSString*)username password:(NSString*)password completionHandler:(WebAPICompletionHandler)handler;
++ (NSDate *)deserializeJsonDateString: (NSString *)jsonDateString;
 
 @end

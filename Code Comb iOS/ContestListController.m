@@ -7,8 +7,11 @@
 //
 
 #import "ContestListController.h"
+#import "WebAPI.h"
 
 @interface ContestListController ()
+
+@property (strong) NSArray *contests;
 
 @end
 
@@ -34,6 +37,22 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    self.contests = [NSArray array];
+    [WebAPI getContestsInPage:nil completionHandler:^(NSInteger code, BOOL success, NSString *info, id data) {
+        if (!success) {
+            [[[UIAlertView alloc] initWithTitle:@"加载失败" message:info delegate:nil cancelButtonTitle:@"好" otherButtonTitles:nil] show];
+            return;
+        }
+        
+        self.contests = data[@"List"];
+        [self.tableView reloadData];
+    }];
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -44,28 +63,34 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 0;
+    return self.contests.count;
 }
 
-/*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    NSDictionary *contest = self.contests[indexPath.row];
     
-    // Configure the cell...
+    NSDate *begin = [WebAPI deserializeJsonDateString:contest[@"Begin"]];
+    NSDate *end = [WebAPI deserializeJsonDateString:contest[@"End"]];
+    
+    UITableViewCell *cell;
+    if ([begin compare:[NSDate date]] == NSOrderedDescending) {
+        cell = [tableView dequeueReusableCellWithIdentifier:@"Pending" forIndexPath:indexPath];
+    } else if ([end compare:[NSDate date]] == NSOrderedAscending) {
+        cell = [tableView dequeueReusableCellWithIdentifier:@"Ended" forIndexPath:indexPath];
+    } else {
+        cell = [tableView dequeueReusableCellWithIdentifier:@"Live" forIndexPath:indexPath];
+    }
+    
+    cell.textLabel.text = contest[@"Title"];
     
     return cell;
 }
-*/
 
 /*
 // Override to support conditional editing of the table view.
