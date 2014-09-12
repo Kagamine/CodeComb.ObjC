@@ -28,6 +28,7 @@
     [super viewDidLoad];
     self.navigationBar.translucent = false;
     [self.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
+    [self.navigationBar setTintColor:[UIColor whiteColor]];
     if ([self.navigationBar respondsToSelector:@selector(setBackgroundImage:forBarMetrics:)]) {
         UIImage *image = [UIImage imageNamed:@"banner"];
         [self.navigationBar setBackgroundImage:image forBarMetrics:UIBarMetricsDefault];

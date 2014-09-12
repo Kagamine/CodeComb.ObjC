@@ -1,22 +1,22 @@
 //
-//  ContestListController.m
+//  ClarificationListController.m
 //  Code Comb iOS
 //
-//  Created by Kaoet on 14-9-11.
+//  Created by Kaoet on 14-9-12.
 //  Copyright (c) 2014年 Code Comb. All rights reserved.
 //
 
-#import "ContestListController.h"
-#import "WebAPI.h"
 #import "ClarificationListController.h"
+#import "WebAPI.h"
+#import "ClarificationDetailController.h"
 
-@interface ContestListController ()
+@interface ClarificationListController ()
 
-@property (strong) NSArray *contests;
+@property (strong) NSArray *clarifications;
 
 @end
 
-@implementation ContestListController
+@implementation ClarificationListController
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -31,20 +31,23 @@
 {
     [super viewDidLoad];
     
-    self.contests = [NSArray array];
+    self.clarifications = [NSArray array];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    self.title = self.contestTitle;
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
-    [super viewDidAppear:animated];
-    
-    [WebAPI getContestsInPage:nil completionHandler:^(NSInteger code, BOOL success, NSString *info, id data) {
+    [WebAPI getClarificationsOfContest:self.contestID completionHandler:^(NSInteger code, BOOL success, NSString *info, id data) {
         if (!success) {
             [[[UIAlertView alloc] initWithTitle:@"加载失败" message:info delegate:nil cancelButtonTitle:@"好" otherButtonTitles:nil] show];
             return;
         }
         
-        self.contests = data[@"List"];
+        self.clarifications = data[@"List"];
         [self.tableView reloadData];
     }];
 }
@@ -64,33 +67,33 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return self.contests.count;
+    return self.clarifications.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSDictionary *contest = self.contests[indexPath.row];
-    
-    NSDate *begin = [WebAPI deserializeJsonDateString:contest[@"Begin"]];
-    NSDate *end = [WebAPI deserializeJsonDateString:contest[@"End"]];
+    NSDictionary *clarification = self.clarifications[indexPath.row];
     
     UITableViewCell *cell;
-    if ([begin compare:[NSDate date]] == NSOrderedDescending) {
+    if ([clarification[@"Status"] isEqualToString:@"Pending"]) {
         cell = [tableView dequeueReusableCellWithIdentifier:@"Pending" forIndexPath:indexPath];
-    } else if ([end compare:[NSDate date]] == NSOrderedAscending) {
-        cell = [tableView dequeueReusableCellWithIdentifier:@"Ended" forIndexPath:indexPath];
+    } else if ([clarification[@"Status"] isEqualToString:@"Private"]) {
+        cell = [tableView dequeueReusableCellWithIdentifier:@"Private" forIndexPath:indexPath];
+    } else if ([clarification[@"Status"] isEqualToString:@"BroadCast"]) {
+        cell = [tableView dequeueReusableCellWithIdentifier:@"Broadcast" forIndexPath:indexPath];
     } else {
-        cell = [tableView dequeueReusableCellWithIdentifier:@"Live" forIndexPath:indexPath];
+        NSLog(@"Illegal status of clarification: %@", clarification[@"Status"]);
+        return nil;
     }
     
-    cell.textLabel.text = contest[@"Title"];
+    cell.textLabel.text = clarification[@"Question"];
     
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [self performSegueWithIdentifier:@"ShowClars" sender:indexPath];
+    [self performSegueWithIdentifier:@"Detail" sender:indexPath];
 }
 
 /*
@@ -131,15 +134,13 @@
 }
 */
 
-
 #pragma mark - Navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([[segue identifier] isEqualToString:@"ShowClars"]) {
-        ClarificationListController *controller = [segue destinationViewController];
+    if ([[segue identifier] isEqualToString:@"Detail"]) {
+        ClarificationDetailController *controller = [segue destinationViewController];
         NSInteger index = [self.tableView indexPathForSelectedRow].row;
-        controller.contestID = [self.contests[index][@"ContestID"] integerValue];
-        controller.contestTitle = self.contests[index][@"Title"];
+        controller.clarification = self.clarifications[index];
     }
 }
 

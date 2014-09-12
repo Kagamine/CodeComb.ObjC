@@ -23,7 +23,7 @@ static void post(NSString *path, NSMutableDictionary *params, WebAPICompletionHa
     NSError *error = nil;
     NSData *data = [NSJSONSerialization dataWithJSONObject:params options:0 error:&error];
     if (error != nil) {
-        NSLog(@"Web API post error:%@",error);
+        NSLog(@"Web API post encode error:%@",error);
         return;
     }
     
@@ -44,13 +44,13 @@ static void post(NSString *path, NSMutableDictionary *params, WebAPICompletionHa
         }
         
         if (error != nil) {
-            NSLog(@"Web API post error:%@", error);
+            NSLog(@"Web API post response error:%@", error);
             return;
         }
         
-        NSDictionary *result = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
+        NSDictionary *result = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
         if (error != nil) {
-            NSLog(@"Web API post error:%@", error);
+            NSLog(@"Web API post decode error:%@", error);
             return;
         }
         
@@ -82,6 +82,18 @@ static void post(NSString *path, NSMutableDictionary *params, WebAPICompletionHa
         }
         handler(code,success,info,data);
     });
+}
+
++ (void)getClarificationsOfContest:(NSInteger)contestID completionHandler:(WebAPICompletionHandler)handler
+{
+    NSMutableDictionary *params = [NSMutableDictionary dictionaryWithDictionary:@{@"ContestID": @(contestID)}];
+    post(@"GetClarifications", params, handler);
+}
+
++ (void)responseClarification:(NSInteger)clarificationID answer:(NSString *)answer status:(NSInteger)status completionHandler:(WebAPICompletionHandler)handler
+{
+    NSMutableDictionary *params = [NSMutableDictionary dictionaryWithDictionary:@{@"ClarID": @(clarificationID),@"Status":@(status),@"Answer":answer}];
+    post(@"ResponseClarification", params, handler);
 }
 
 #pragma mark - Helper methods
