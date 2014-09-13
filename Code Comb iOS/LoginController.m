@@ -8,6 +8,7 @@
 
 #import "LoginController.h"
 #import "WebAPI.h"
+#import "AppDelegate.h"
 
 @interface LoginController ()
 - (IBAction)login:(id)sender;
@@ -43,6 +44,12 @@
 - (IBAction)login:(id)sender {
     [WebAPI authWithUsername:self.txtUsername.text password:self.txtPassword.text completionHandler:^(NSInteger code, BOOL success, NSString *info, id data) {
         if (success) {
+            // Send device token to server
+            AppDelegate *app = [[UIApplication sharedApplication] delegate];
+            if (app.deviceToken != nil) {
+                [WebAPI registerPushServiceWithDeviceToken:app.deviceToken completionHandler:nil];
+            }
+            
             [self performSegueWithIdentifier:@"Login" sender:sender];
         } else {
             [[[UIAlertView alloc] initWithTitle:@"登录失败" message:@"用户名或密码错误" delegate:nil cancelButtonTitle:@"好" otherButtonTitles:nil] show];

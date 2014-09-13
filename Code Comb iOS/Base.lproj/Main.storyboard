@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="tpw-hB-a1E">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="tpw-hB-a1E">
     <dependencies>
         <deployment defaultVersion="1792" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
-        <!--登录-->
+        <!--Login Controller - 登录-->
         <scene sceneID="WQJ-sJ-x0m">
             <objects>
                 <viewController title="登录" id="tpw-hB-a1E" customClass="LoginController" sceneMemberID="viewController">
@@ -143,13 +143,59 @@
                     </tabBar>
                     <connections>
                         <segue destination="acq-WI-UrO" kind="relationship" relationship="viewControllers" id="LBm-cX-xtL"/>
+                        <segue destination="PwR-zL-VTv" kind="relationship" relationship="viewControllers" id="yOS-z1-uAq"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fPh-Cs-RiR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2391" y="-583"/>
+            <point key="canvasLocation" x="2399" y="-583"/>
         </scene>
-        <!--比赛-->
+        <!--Contact List Controller - 我的消息-->
+        <scene sceneID="Fec-Dz-bHa">
+            <objects>
+                <tableViewController id="lzN-gq-qTw" customClass="ContactListController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="HVB-wp-OnF">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Contact" textLabel="p6n-jj-rWW" detailTextLabel="SgF-sk-5Qs" style="IBUITableViewCellStyleValue1" id="Rof-LZ-nDp">
+                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Rof-LZ-nDp" id="XUq-9y-5pb">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Tom" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="p6n-jj-rWW">
+                                            <rect key="frame" x="15" y="11" width="33" height="21"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="3" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="SgF-sk-5Qs">
+                                            <rect key="frame" x="295" y="11" width="10" height="21"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="lzN-gq-qTw" id="gK0-fk-alN"/>
+                            <outlet property="delegate" destination="lzN-gq-qTw" id="rhn-ZL-OYN"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="我的消息" id="d1l-HL-fbv"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hwh-ka-xxS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3411" y="-113"/>
+        </scene>
+        <!--Contest List Controller - 比赛-->
         <scene sceneID="ftJ-vF-w6l">
             <objects>
                 <tableViewController id="QLA-HD-tb9" customClass="ContestListController" sceneMemberID="viewController">
@@ -245,7 +291,7 @@
             </objects>
             <point key="canvasLocation" x="3411" y="-810"/>
         </scene>
-        <!--提问列表-->
+        <!--Clarification List Controller - 提问列表-->
         <scene sceneID="oiJ-re-inn">
             <objects>
                 <tableViewController id="ezi-jz-Dgf" customClass="ClarificationListController" sceneMemberID="viewController">
@@ -341,7 +387,7 @@
             </objects>
             <point key="canvasLocation" x="3813" y="-810"/>
         </scene>
-        <!--具体提问-->
+        <!--Clarification Detail Controller - 具体提问-->
         <scene sceneID="38v-d4-55r">
             <objects>
                 <viewController id="cgB-K3-Z9a" customClass="ClarificationDetailController" sceneMemberID="viewController">
@@ -445,7 +491,7 @@
             </objects>
             <point key="canvasLocation" x="4260" y="-810"/>
         </scene>
-        <!--比赛-->
+        <!--Navigation Controller - 比赛-->
         <scene sceneID="13Y-JN-UhQ">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="acq-WI-UrO" customClass="NavigationController" sceneMemberID="viewController">
@@ -464,11 +510,31 @@
             </objects>
             <point key="canvasLocation" x="2885" y="-810"/>
         </scene>
+        <!--Navigation Controller - 消息-->
+        <scene sceneID="r1Q-xt-skj">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="PwR-zL-VTv" customClass="NavigationController" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="消息" image="msg" id="kAH-vY-ItF"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="yFk-o3-jsW">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="lzN-gq-qTw" kind="relationship" relationship="rootViewController" id="AFJ-3O-n9S"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CAL-0k-072" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2885" y="-113"/>
+        </scene>
     </scenes>
     <resources>
         <image name="banner460" width="3200" height="460"/>
         <image name="contest" width="30" height="30"/>
         <image name="logo" width="450" height="100"/>
+        <image name="msg" width="30" height="30"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

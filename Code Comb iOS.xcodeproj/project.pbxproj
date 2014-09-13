@@ -26,6 +26,7 @@
 		01761C2819BB3FEF000C4998 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01761C0A19BB3FEF000C4998 /* UIKit.framework */; };
 		01761C3019BB3FEF000C4998 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 01761C2E19BB3FEF000C4998 /* InfoPlist.strings */; };
 		01761C3219BB3FEF000C4998 /* Code_Comb_iOSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 01761C3119BB3FEF000C4998 /* Code_Comb_iOSTests.m */; };
+		01A8F8AE19C482AE009AB05A /* ContactListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A8F8AD19C482AE009AB05A /* ContactListController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +69,8 @@
 		01761C2D19BB3FEF000C4998 /* Code Comb iOSTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Code Comb iOSTests-Info.plist"; sourceTree = "<group>"; };
 		01761C2F19BB3FEF000C4998 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		01761C3119BB3FEF000C4998 /* Code_Comb_iOSTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Code_Comb_iOSTests.m; sourceTree = "<group>"; };
+		01A8F8AC19C482AE009AB05A /* ContactListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactListController.h; sourceTree = "<group>"; };
+		01A8F8AD19C482AE009AB05A /* ContactListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactListController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +147,8 @@
 				015AB01219C2850B00864EFE /* ClarificationListController.m */,
 				015AB01719C2B76700864EFE /* ClarificationDetailController.h */,
 				015AB01819C2B76700864EFE /* ClarificationDetailController.m */,
+				01A8F8AC19C482AE009AB05A /* ContactListController.h */,
+				01A8F8AD19C482AE009AB05A /* ContactListController.m */,
 			);
 			path = "Code Comb iOS";
 			sourceTree = "<group>";
@@ -278,6 +283,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				015AB00D19C1CE3600864EFE /* WebAPI.m in Sources */,
+				01A8F8AE19C482AE009AB05A /* ContactListController.m in Sources */,
 				015AB01919C2B76700864EFE /* ClarificationDetailController.m in Sources */,
 				015AB00719C1A7A800864EFE /* NavigationController.m in Sources */,
 				01761C1719BB3FEF000C4998 /* AppDelegate.m in Sources */,

@@ -16,6 +16,8 @@ typedef void (^WebAPICompletionHandler)(NSInteger code,BOOL success,NSString *in
 + (void)authWithUsername:(NSString*)username password:(NSString*)password completionHandler:(WebAPICompletionHandler)handler;
 + (void)getClarificationsOfContest:(NSInteger)contestID completionHandler:(WebAPICompletionHandler)handler;
 + (void)responseClarification:(NSInteger)clarificationID answer:(NSString*)answer status:(NSInteger)status completionHandler:(WebAPICompletionHandler)handler;
++ (void)registerPushServiceWithDeviceToken:(NSString*)deviceToken completionHandler:(WebAPICompletionHandler)handler;
++ (void)getContactsWithCompletionHandler:(WebAPICompletionHandler)handler;
 
 + (NSDate *)deserializeJsonDateString: (NSString *)jsonDateString;
 

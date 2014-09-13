@@ -51,6 +51,7 @@ static void post(NSString *path, NSMutableDictionary *params, WebAPICompletionHa
         NSDictionary *result = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
         if (error != nil) {
             NSLog(@"Web API post decode error:%@", error);
+            NSLog(@"Server response: %@",[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding]);
             return;
         }
         
@@ -58,9 +59,11 @@ static void post(NSString *path, NSMutableDictionary *params, WebAPICompletionHa
         BOOL success = [result[@"IsSuccess"] boolValue];
         NSString *info = result[@"Info"];
         
-        dispatch_async(dispatch_get_main_queue(), ^{
-            handler(code,success,info,result);
-        });
+        if (handler != nil) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                handler(code,success,info,result);
+            });
+        }
     }] resume];
 }
 
@@ -80,7 +83,10 @@ static void post(NSString *path, NSMutableDictionary *params, WebAPICompletionHa
         if (success) {
             token = data[@"AccessToken"];
         }
-        handler(code,success,info,data);
+        
+        if (handler != nil) {
+            handler(code,success,info,data);
+        }
     });
 }
 
@@ -94,6 +100,18 @@ static void post(NSString *path, NSMutableDictionary *params, WebAPICompletionHa
 {
     NSMutableDictionary *params = [NSMutableDictionary dictionaryWithDictionary:@{@"ClarID": @(clarificationID),@"Status":@(status),@"Answer":answer}];
     post(@"ResponseClarification", params, handler);
+}
+
++ (void)registerPushServiceWithDeviceToken:(NSString *)deviceToken completionHandler:(WebAPICompletionHandler)handler
+{
+    NSMutableDictionary *params = [NSMutableDictionary dictionaryWithDictionary:@{@"DeviceToken": deviceToken,@"DeviceType":@1}];
+    post(@"RegisterPushService", params, handler);
+}
+
++ (void)getContactsWithCompletionHandler:(WebAPICompletionHandler)handler
+{
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    post(@"GetContacts", params, handler);
 }
 
 #pragma mark - Helper methods
