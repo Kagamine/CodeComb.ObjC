@@ -27,7 +27,10 @@ static void post(NSString *path, NSMutableDictionary *params, WebAPICompletionHa
         return;
     }
     
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:path relativeToURL:[NSURL URLWithString:ApiRootURL]]];
+    NSURL *url = [NSURL URLWithString:path relativeToURL:[NSURL URLWithString:ApiRootURL]];
+    NSLog(@"WebAPI request to %@: %@",url,[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding]);
+    
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
     [request setHTTPMethod:@"POST"];
     [request setHTTPBody:data];
     [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
@@ -48,10 +51,11 @@ static void post(NSString *path, NSMutableDictionary *params, WebAPICompletionHa
             return;
         }
         
+        NSLog(@"Server response: %@",[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding]);
+        
         NSDictionary *result = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
         if (error != nil) {
             NSLog(@"Web API post decode error:%@", error);
-            NSLog(@"Server response: %@",[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding]);
             return;
         }
         
@@ -114,19 +118,39 @@ static void post(NSString *path, NSMutableDictionary *params, WebAPICompletionHa
     post(@"GetContacts", params, handler);
 }
 
++ (void)broadcast:(NSString *)message completionHandler:(WebAPICompletionHandler)handler
+{
+    NSMutableDictionary *params = [NSMutableDictionary dictionaryWithDictionary:@{@"Message": message}];
+    post(@"BroadCast", params, handler);
+}
+
++ (void)getProfileWithCompletionHandler:(WebAPICompletionHandler)handler
+{
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    post(@"GetProfile", params, handler);
+}
+
++ (void)getChatRecordsWith:(NSInteger)userID completionHandler:(WebAPICompletionHandler)handler
+{
+    NSMutableDictionary *params = [NSMutableDictionary dictionaryWithDictionary:@{@"UserID": @(userID)}];
+    post(@"GetChatRecords", params, handler);
+}
+
++ (void)sendMessageTo:(NSInteger)userID content:(NSString *)content completionHandler:(WebAPICompletionHandler)handler
+{
+    NSMutableDictionary *params = [NSMutableDictionary dictionaryWithDictionary:@{@"UserID": @(userID),@"Content":content}];
+    post(@"SendMessage", params, handler);
+}
+
 #pragma mark - Helper methods
 
 + (NSDate *)deserializeJsonDateString: (NSString *)jsonDateString
 {
-    NSInteger offset = [[NSTimeZone defaultTimeZone] secondsFromGMT]; //get number of seconds to add or subtract according to the client default time zone
-    
     NSInteger startPosition = [jsonDateString rangeOfString:@"("].location + 1; //start of the date value
     
     NSTimeInterval unixTime = [[jsonDateString substringWithRange:NSMakeRange(startPosition, 13)] doubleValue] / 1000; //WCF will send 13 digit-long value for the time interval since 1970 (millisecond precision) whereas iOS works with 10 digit-long values (second precision), hence the divide by 1000
     
-    NSDate *date = [[NSDate dateWithTimeIntervalSince1970:unixTime] dateByAddingTimeInterval:offset];
-    
-    return date;
+    return [NSDate dateWithTimeIntervalSince1970:unixTime];
 }
 
 @end

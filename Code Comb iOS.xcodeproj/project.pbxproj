@@ -27,6 +27,10 @@
 		01761C3019BB3FEF000C4998 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 01761C2E19BB3FEF000C4998 /* InfoPlist.strings */; };
 		01761C3219BB3FEF000C4998 /* Code_Comb_iOSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 01761C3119BB3FEF000C4998 /* Code_Comb_iOSTests.m */; };
 		01A8F8AE19C482AE009AB05A /* ContactListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A8F8AD19C482AE009AB05A /* ContactListController.m */; };
+		01ACAEDD19C52BE9000F686E /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01ACAEDC19C52BE9000F686E /* AVFoundation.framework */; };
+		01ACAEE319C541D5000F686E /* BroadcastController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01ACAEE219C541D5000F686E /* BroadcastController.m */; };
+		01ACAEE619C54849000F686E /* ChatController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01ACAEE519C54849000F686E /* ChatController.m */; };
+		E35AF171DDA74EB5B0D1454C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E1C41F03457048B38F0D1BD4 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +75,13 @@
 		01761C3119BB3FEF000C4998 /* Code_Comb_iOSTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Code_Comb_iOSTests.m; sourceTree = "<group>"; };
 		01A8F8AC19C482AE009AB05A /* ContactListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactListController.h; sourceTree = "<group>"; };
 		01A8F8AD19C482AE009AB05A /* ContactListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactListController.m; sourceTree = "<group>"; };
+		01ACAEDC19C52BE9000F686E /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		01ACAEE119C541D5000F686E /* BroadcastController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BroadcastController.h; sourceTree = "<group>"; };
+		01ACAEE219C541D5000F686E /* BroadcastController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BroadcastController.m; sourceTree = "<group>"; };
+		01ACAEE419C54849000F686E /* ChatController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatController.h; sourceTree = "<group>"; };
+		01ACAEE519C54849000F686E /* ChatController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatController.m; sourceTree = "<group>"; };
+		351B2DF70A894E88B0A12EA7 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		E1C41F03457048B38F0D1BD4 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,9 +89,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01ACAEDD19C52BE9000F686E /* AVFoundation.framework in Frameworks */,
 				01761C0919BB3FEF000C4998 /* CoreGraphics.framework in Frameworks */,
 				01761C0B19BB3FEF000C4998 /* UIKit.framework in Frameworks */,
 				01761C0719BB3FEF000C4998 /* Foundation.framework in Frameworks */,
+				E35AF171DDA74EB5B0D1454C /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -104,6 +117,7 @@
 				01761C2B19BB3FEF000C4998 /* Code Comb iOSTests */,
 				01761C0519BB3FEF000C4998 /* Frameworks */,
 				01761C0419BB3FEF000C4998 /* Products */,
+				351B2DF70A894E88B0A12EA7 /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -119,10 +133,12 @@
 		01761C0519BB3FEF000C4998 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				01ACAEDC19C52BE9000F686E /* AVFoundation.framework */,
 				01761C0619BB3FEF000C4998 /* Foundation.framework */,
 				01761C0819BB3FEF000C4998 /* CoreGraphics.framework */,
 				01761C0A19BB3FEF000C4998 /* UIKit.framework */,
 				01761C2519BB3FEF000C4998 /* XCTest.framework */,
+				E1C41F03457048B38F0D1BD4 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -149,6 +165,10 @@
 				015AB01819C2B76700864EFE /* ClarificationDetailController.m */,
 				01A8F8AC19C482AE009AB05A /* ContactListController.h */,
 				01A8F8AD19C482AE009AB05A /* ContactListController.m */,
+				01ACAEE119C541D5000F686E /* BroadcastController.h */,
+				01ACAEE219C541D5000F686E /* BroadcastController.m */,
+				01ACAEE419C54849000F686E /* ChatController.h */,
+				01ACAEE519C54849000F686E /* ChatController.m */,
 			);
 			path = "Code Comb iOS";
 			sourceTree = "<group>";
@@ -189,9 +209,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 01761C3519BB3FEF000C4998 /* Build configuration list for PBXNativeTarget "Code Comb iOS" */;
 			buildPhases = (
+				87E45E926F9A461BB4E38D9C /* Check Pods Manifest.lock */,
 				01761BFF19BB3FEF000C4998 /* Sources */,
 				01761C0019BB3FEF000C4998 /* Frameworks */,
 				01761C0119BB3FEF000C4998 /* Resources */,
+				540FFA33266D4C3DA1AB4BFF /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -277,14 +299,49 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		540FFA33266D4C3DA1AB4BFF /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		87E45E926F9A461BB4E38D9C /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		01761BFF19BB3FEF000C4998 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				015AB00D19C1CE3600864EFE /* WebAPI.m in Sources */,
+				01ACAEE619C54849000F686E /* ChatController.m in Sources */,
 				01A8F8AE19C482AE009AB05A /* ContactListController.m in Sources */,
 				015AB01919C2B76700864EFE /* ClarificationDetailController.m in Sources */,
+				01ACAEE319C541D5000F686E /* BroadcastController.m in Sources */,
 				015AB00719C1A7A800864EFE /* NavigationController.m in Sources */,
 				01761C1719BB3FEF000C4998 /* AppDelegate.m in Sources */,
 				015AB00A19C1CAE100864EFE /* ContestListController.m in Sources */,
@@ -412,6 +469,7 @@
 		};
 		01761C3619BB3FEF000C4998 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 351B2DF70A894E88B0A12EA7 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -430,6 +488,7 @@
 		};
 		01761C3719BB3FEF000C4998 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 351B2DF70A894E88B0A12EA7 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;

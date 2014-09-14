@@ -18,6 +18,10 @@ typedef void (^WebAPICompletionHandler)(NSInteger code,BOOL success,NSString *in
 + (void)responseClarification:(NSInteger)clarificationID answer:(NSString*)answer status:(NSInteger)status completionHandler:(WebAPICompletionHandler)handler;
 + (void)registerPushServiceWithDeviceToken:(NSString*)deviceToken completionHandler:(WebAPICompletionHandler)handler;
 + (void)getContactsWithCompletionHandler:(WebAPICompletionHandler)handler;
++ (void)broadcast:(NSString*)message completionHandler:(WebAPICompletionHandler)handler;
++ (void)getProfileWithCompletionHandler:(WebAPICompletionHandler)handler;
++ (void)getChatRecordsWith:(NSInteger)userID completionHandler:(WebAPICompletionHandler)handler;
++ (void)sendMessageTo:(NSInteger)userID content:(NSString*)content completionHandler:(WebAPICompletionHandler)handler;
 
 + (NSDate *)deserializeJsonDateString: (NSString *)jsonDateString;
 

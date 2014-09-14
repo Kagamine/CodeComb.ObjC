@@ -8,6 +8,7 @@
 
 #import "ContactListController.h"
 #import "WebAPI.h"
+#import "ChatController.h"
 
 @interface ContactListController ()
 
@@ -143,15 +144,18 @@
 }
 */
 
-/*
 #pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    if ([segue.identifier isEqualToString:@"Chat"]) {
+        UINavigationController *nav = segue.destinationViewController;
+        ChatController *controller = (ChatController *)[nav topViewController];
+        NSDictionary *contact = self.contacts[[self.tableView indexPathForSelectedRow].row];
+        controller.hisID = [contact[@"UserID"] integerValue];
+        controller.hisAvatarURL = [NSURL URLWithString:contact[@"AvatarURL"]];
+        controller.hisNickname = contact[@"Nickname"];
+    }
 }
-*/
 
 @end
