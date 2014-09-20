@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		011B86FA19CD8E7A0035FA01 /* ProfileController.m in Sources */ = {isa = PBXBuildFile; fileRef = 011B86F919CD8E7A0035FA01 /* ProfileController.m */; };
+		011B870319CDA02B0035FA01 /* SearchContactDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 011B870219CDA02B0035FA01 /* SearchContactDelegate.m */; };
 		015AB00719C1A7A800864EFE /* NavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 015AB00619C1A7A800864EFE /* NavigationController.m */; };
 		015AB00A19C1CAE100864EFE /* ContestListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 015AB00919C1CAE100864EFE /* ContestListController.m */; };
 		015AB00D19C1CE3600864EFE /* WebAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 015AB00C19C1CE3600864EFE /* WebAPI.m */; };
@@ -47,6 +48,8 @@
 /* Begin PBXFileReference section */
 		011B86F819CD8E7A0035FA01 /* ProfileController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileController.h; sourceTree = "<group>"; };
 		011B86F919CD8E7A0035FA01 /* ProfileController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileController.m; sourceTree = "<group>"; };
+		011B870119CDA02B0035FA01 /* SearchContactDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchContactDelegate.h; sourceTree = "<group>"; };
+		011B870219CDA02B0035FA01 /* SearchContactDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchContactDelegate.m; sourceTree = "<group>"; };
 		015AB00519C1A7A800864EFE /* NavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationController.h; sourceTree = "<group>"; };
 		015AB00619C1A7A800864EFE /* NavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationController.m; sourceTree = "<group>"; };
 		015AB00819C1CAE100864EFE /* ContestListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContestListController.h; sourceTree = "<group>"; };
@@ -174,6 +177,8 @@
 				01ACAEE519C54849000F686E /* ChatController.m */,
 				011B86F819CD8E7A0035FA01 /* ProfileController.h */,
 				011B86F919CD8E7A0035FA01 /* ProfileController.m */,
+				011B870119CDA02B0035FA01 /* SearchContactDelegate.h */,
+				011B870219CDA02B0035FA01 /* SearchContactDelegate.m */,
 			);
 			path = "Code Comb iOS";
 			sourceTree = "<group>";
@@ -351,6 +356,7 @@
 				01761C1719BB3FEF000C4998 /* AppDelegate.m in Sources */,
 				015AB00A19C1CAE100864EFE /* ContestListController.m in Sources */,
 				01761C1319BB3FEF000C4998 /* main.m in Sources */,
+				011B870319CDA02B0035FA01 /* SearchContactDelegate.m in Sources */,
 				015AB01319C2850B00864EFE /* ClarificationListController.m in Sources */,
 				015AB01019C1E91F00864EFE /* LoginController.m in Sources */,
 				011B86FA19CD8E7A0035FA01 /* ProfileController.m in Sources */,

@@ -166,9 +166,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" placeholder="寻找其他人聊天" id="aA0-IJ-q7a">
+                            <rect key="frame" x="0.0" y="64" width="320" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="lzN-gq-qTw" id="XZY-Ym-znZ"/>
+                            </connections>
+                        </searchBar>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Contact" textLabel="p6n-jj-rWW" detailTextLabel="SgF-sk-5Qs" style="IBUITableViewCellStyleValue1" id="Rof-LZ-nDp">
-                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="130" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Rof-LZ-nDp" id="XUq-9y-5pb">
                                     <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
@@ -202,8 +210,18 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="我的消息" id="d1l-HL-fbv"/>
+                    <connections>
+                        <outlet property="searchDisplayController" destination="nxA-kt-2Wo" id="ovU-t7-LrM"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hwh-ka-xxS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="nxA-kt-2Wo">
+                    <connections>
+                        <outlet property="searchBar" destination="aA0-IJ-q7a" id="ReH-cY-mHE"/>
+                        <outlet property="searchContentsController" destination="lzN-gq-qTw" id="O04-Yz-ZNd"/>
+                        <outlet property="searchResultsDelegate" destination="lzN-gq-qTw" id="hIu-si-THw"/>
+                    </connections>
+                </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="3411" y="-113"/>
         </scene>
@@ -220,13 +238,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="DuC-6c-vSD">
-                        <barButtonItem key="leftBarButtonItem" image="Back" id="tRm-qU-hcC">
-                            <connections>
-                                <action selector="back:" destination="QAv-SZ-7sY" id="Fa7-0o-4jM"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="DuC-6c-vSD"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R72-db-MzG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -856,7 +868,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Back" width="30" height="30"/>
         <image name="banner460" width="3200" height="460"/>
         <image name="contest" width="30" height="30"/>
         <image name="logo" width="450" height="100"/>

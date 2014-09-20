@@ -9,11 +9,13 @@
 #import "ContactListController.h"
 #import "WebAPI.h"
 #import "ChatController.h"
+#import "SearchContactDelegate.h"
 
 @interface ContactListController ()
 
 @property (strong) NSArray *contacts;
 @property (strong) NSMutableArray *images;
+@property (nonatomic,strong) SearchContactDelegate *searchDelegate;
 
 @end
 
@@ -34,6 +36,11 @@
     
     self.contacts = [NSArray array];
     self.tableView.tableFooterView = [[UIView alloc] init];
+    
+    self.searchDelegate = [[SearchContactDelegate alloc] initWithController:self];
+    self.searchDisplayController.delegate = self.searchDelegate;
+    self.searchDisplayController.searchResultsDataSource = self.searchDelegate;
+    self.searchDisplayController.searchResultsDelegate = self.searchDelegate;
 }
 
 - (void)viewDidAppear:(BOOL)animated

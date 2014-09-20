@@ -22,6 +22,7 @@ typedef void (^WebAPICompletionHandler)(NSInteger code,BOOL success,NSString *in
 + (void)getProfileWithCompletionHandler:(WebAPICompletionHandler)handler;
 + (void)getChatRecordsWith:(NSInteger)userID completionHandler:(WebAPICompletionHandler)handler;
 + (void)sendMessageTo:(NSInteger)userID content:(NSString*)content completionHandler:(WebAPICompletionHandler)handler;
++ (void)findContactsLike:(NSString*)nickname completionHandler:(WebAPICompletionHandler)handler;
 
 + (NSDate *)deserializeJsonDateString: (NSString *)jsonDateString;
 

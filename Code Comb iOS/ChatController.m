@@ -18,7 +18,7 @@
 @property (strong) UIImage *hisAvatar;
 @property (nonatomic,strong) UIImageView *outgoingBubble;
 @property (nonatomic,strong) UIImageView *incomingBubble;
-- (IBAction)back:(id)sender;
+@property (nonatomic,strong) UIBarButtonItem *backButton;
 
 @end
 
@@ -39,6 +39,8 @@
     self.messages = [NSMutableArray array];
     self.myProfile = @{@"UserID": @0, @"Nickname": @"Me"};
     
+    self.backButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"Back"] style:UIBarButtonItemStyleBordered target:self action:@selector(back:)];
+    self.navigationItem.leftBarButtonItem = self.backButton;
     self.inputToolbar.contentView.leftBarButtonItem = nil;
     self.outgoingBubble = [JSQMessagesBubbleImageFactory outgoingMessageBubbleImageViewWithColor:[UIColor jsq_messageBubbleBlueColor]];
     self.incomingBubble = [JSQMessagesBubbleImageFactory incomingMessageBubbleImageViewWithColor:[UIColor jsq_messageBubbleLightGrayColor]];
@@ -100,7 +102,10 @@
         }
         
         [self.collectionView reloadData];
-        [self.collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:self.messages.count-1 inSection:0] atScrollPosition:UICollectionViewScrollPositionBottom animated:YES];
+        
+        if (self.messages.count > 0) {
+            [self.collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:self.messages.count-1 inSection:0] atScrollPosition:UICollectionViewScrollPositionBottom animated:YES];
+        }
     }];
 }
 
@@ -143,7 +148,7 @@
 {
     NSDictionary *message = self.messages[indexPath.item];
     
-    if ([message[@"SenderID"] integerValue] == self.hisID) {
+    if ([message[@"ReceiverID"] integerValue] != self.hisID) {
         return [[JSQMessage alloc] initWithText:message[@"Content"] sender:self.hisNickname date:message[@"Time"]];
     } else {
         return [[JSQMessage alloc] initWithText:message[@"Content"] sender:self.myProfile[@"Nickname"] date:message[@"Time"]];
@@ -154,7 +159,7 @@
 {
     NSDictionary *message = [self.messages objectAtIndex:indexPath.item];
     
-    if ([message[@"SenderID"] integerValue] == self.hisID) {
+    if ([message[@"ReceiverID"] integerValue] != self.hisID) {
         return [[UIImageView alloc] initWithImage:self.incomingBubble.image
                                  highlightedImage:self.incomingBubble.highlightedImage];
     }
@@ -167,7 +172,7 @@
 {
     NSDictionary *message = [self.messages objectAtIndex:indexPath.item];
     
-    if ([message[@"SenderID"] integerValue] == self.hisID) {
+    if ([message[@"ReceiverID"] integerValue] != self.hisID) {
         return [[UIImageView alloc] initWithImage:self.hisAvatar];
     }
     
@@ -203,7 +208,7 @@
     
     NSDictionary *msg = [self.messages objectAtIndex:indexPath.item];
     
-    if ([msg[@"SenderID"] integerValue] == self.hisID) {
+    if ([msg[@"ReceiverID"] integerValue] != self.hisID) {
         cell.textView.textColor = [UIColor blackColor];
     }
     else {

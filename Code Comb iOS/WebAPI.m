@@ -139,6 +139,12 @@ static void post(NSString *path, NSMutableDictionary *params, WebAPICompletionHa
     post(@"SendMessage", params, handler);
 }
 
++ (void)findContactsLike:(NSString *)nickname completionHandler:(WebAPICompletionHandler)handler
+{
+    NSMutableDictionary *params = [NSMutableDictionary dictionaryWithDictionary:@{@"Nickname": nickname}];
+    post(@"FindContacts", params, handler);
+}
+
 #pragma mark - Helper methods
 
 + (NSDate *)deserializeJsonDateString: (NSString *)jsonDateString
