@@ -32,6 +32,7 @@
     [super viewDidLoad];
     
     self.clarifications = [NSArray array];
+    self.tableView.tableFooterView = [[UIView alloc] init];
 }
 
 - (void)viewWillAppear:(BOOL)animated

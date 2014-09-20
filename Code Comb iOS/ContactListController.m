@@ -33,6 +33,7 @@
     [super viewDidLoad];
     
     self.contacts = [NSArray array];
+    self.tableView.tableFooterView = [[UIView alloc] init];
 }
 
 - (void)viewDidAppear:(BOOL)animated

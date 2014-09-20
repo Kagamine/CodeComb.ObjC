@@ -11,9 +11,11 @@
 
 @interface ClarificationDetailController () <UIAlertViewDelegate>
 
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UITextView *txtQuestion;
 @property (weak, nonatomic) IBOutlet UITextView *txtAnswer;
 - (IBAction)save:(id)sender;
+- (IBAction)dismissKeyboard:(id)sender;
 
 @end
 
@@ -31,7 +33,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -41,6 +42,17 @@
     self.title = self.clarification[@"Category"];
     self.txtQuestion.text = self.clarification[@"Question"];
     self.txtAnswer.text = self.clarification[@"Answer"];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillHideNotification object:nil];
 }
 
 - (void)didReceiveMemoryWarning
@@ -51,6 +63,10 @@
 
 - (IBAction)save:(id)sender {
     [[[UIAlertView alloc] initWithTitle:@"可见范围" message:@"您希望哪些人可以看到您的回答？" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"所有人",@"仅提问者", nil] show];
+}
+
+- (IBAction)dismissKeyboard:(id)sender {
+    [self.txtAnswer resignFirstResponder];
 }
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
@@ -73,5 +89,29 @@
             [self.navigationController popViewControllerAnimated:YES];
         }];
     }
+}
+
+#define kTabbarHeight 49
+
+- (void)keyboardWillShow:(NSNotification*)n
+{
+    CGRect frame = self.view.frame;
+    frame.size.height-=[[n userInfo][UIKeyboardFrameBeginUserInfoKey] CGRectValue].size.height - kTabbarHeight;
+    
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationDuration:0.3];
+    self.view.frame = frame;
+    [UIView commitAnimations];
+}
+
+- (void)keyboardWillHide:(NSNotification*)n
+{
+    CGRect frame = self.view.frame;
+    frame.size.height+=[[n userInfo][UIKeyboardFrameEndUserInfoKey] CGRectValue].size.height - kTabbarHeight;
+    
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationDuration:0.3];
+    self.view.frame = frame;
+    [UIView commitAnimations];
 }
 @end

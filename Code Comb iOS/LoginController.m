@@ -10,7 +10,8 @@
 #import "WebAPI.h"
 #import "AppDelegate.h"
 
-@interface LoginController ()
+@interface LoginController () <UITextFieldDelegate>
+
 - (IBAction)login:(id)sender;
 @property (weak, nonatomic) IBOutlet UITextField *txtUsername;
 @property (weak, nonatomic) IBOutlet UITextField *txtPassword;
@@ -32,7 +33,16 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
 }
 
 - (void)didReceiveMemoryWarning
@@ -56,4 +66,16 @@
         }
     }];
 }
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    if (textField == self.txtUsername) {
+        [self.txtPassword becomeFirstResponder];
+    } else if (textField == self.txtPassword) {
+        [self.txtPassword resignFirstResponder];
+        [self login:nil];
+    }
+    return YES;
+}
+
 @end

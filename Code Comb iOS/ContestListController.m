@@ -32,6 +32,7 @@
     [super viewDidLoad];
     
     self.contests = [NSArray array];
+    self.tableView.tableFooterView = [[UIView alloc] init];
 }
 
 - (void)viewDidAppear:(BOOL)animated

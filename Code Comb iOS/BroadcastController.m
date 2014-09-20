@@ -12,7 +12,9 @@
 @interface BroadcastController ()
 
 @property (weak, nonatomic) IBOutlet UITextView *txtMessage;
+
 - (IBAction)push:(id)sender;
+- (IBAction)dismissKeyboard:(id)sender;
 
 @end
 
@@ -33,6 +35,22 @@
     // Do any additional setup after loading the view.
 }
 
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillHideNotification object:nil];
+}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -61,5 +79,33 @@
         [[[UIAlertView alloc] initWithTitle:@"推送成功" message:@"消息推送成功" delegate:nil cancelButtonTitle:@"好" otherButtonTitles:nil] show];
         self.txtMessage.text = @"";
     }];
+}
+
+- (IBAction)dismissKeyboard:(id)sender {
+    [self.txtMessage resignFirstResponder];
+}
+
+#define kTabbarHeight 49
+
+- (void)keyboardWillShow:(NSNotification*)n
+{
+    CGRect frame = self.view.frame;
+    frame.size.height-=[[n userInfo][UIKeyboardFrameBeginUserInfoKey] CGRectValue].size.height - kTabbarHeight;
+    
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationDuration:0.3];
+    self.view.frame = frame;
+    [UIView commitAnimations];
+}
+
+- (void)keyboardWillHide:(NSNotification*)n
+{
+    CGRect frame = self.view.frame;
+    frame.size.height+=[[n userInfo][UIKeyboardFrameEndUserInfoKey] CGRectValue].size.height - kTabbarHeight;
+    
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationDuration:0.3];
+    self.view.frame = frame;
+    [UIView commitAnimations];
 }
 @end
