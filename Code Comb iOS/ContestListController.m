@@ -12,7 +12,9 @@
 
 @interface ContestListController ()
 
-@property (strong) NSArray *contests;
+@property (strong) NSMutableArray *contests;
+@property (assign) NSInteger page;
+@property (assign) BOOL loadOver;
 
 @end
 
@@ -31,21 +33,48 @@
 {
     [super viewDidLoad];
     
-    self.contests = [NSArray array];
+    self.contests = [NSMutableArray array];
     self.tableView.tableFooterView = [[UIView alloc] init];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    self.page = 0;
+    self.loadOver = NO;
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
     
-    [WebAPI getContestsInPage:nil completionHandler:^(NSInteger code, BOOL success, NSString *info, id data) {
+    [self loadMore];
+}
+
+- (void)loadMore
+{
+    if (self.loadOver) {
+        return;
+    }
+    
+    NSInteger page = self.page;
+    [WebAPI getContestsInPage: page completionHandler:^(NSInteger code, BOOL success, NSString *info, id data) {
         if (!success) {
             [[[UIAlertView alloc] initWithTitle:@"加载失败" message:info delegate:nil cancelButtonTitle:@"好" otherButtonTitles:nil] show];
             return;
         }
         
-        self.contests = data[@"List"];
+        self.page = page + 1;
+        if (page == 0) {
+            self.contests = data[@"List"];
+        } else {
+            [self.contests addObjectsFromArray:data[@"List"]];
+        }
+        
+        if ([data[@"List"] count] == 0) {
+            self.loadOver = YES;
+        }
         [self.tableView reloadData];
     }];
 }
@@ -70,6 +99,10 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    if (indexPath.row == self.contests.count - 1) {
+        [self loadMore];
+    }
+    
     NSDictionary *contest = self.contests[indexPath.row];
     
     NSDate *begin = [WebAPI deserializeJsonDateString:contest[@"Begin"]];

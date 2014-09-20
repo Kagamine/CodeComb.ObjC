@@ -71,12 +71,9 @@ static void post(NSString *path, NSMutableDictionary *params, WebAPICompletionHa
     }] resume];
 }
 
-+ (void)getContestsInPage:(NSNumber *)page completionHandler:(WebAPICompletionHandler)handler
++ (void)getContestsInPage:(NSInteger)page completionHandler:(WebAPICompletionHandler)handler
 {
-    NSMutableDictionary *params = [NSMutableDictionary dictionary];
-    if (page != nil) {
-        [params setObject:page forKey:@"Page"];
-    }
+    NSMutableDictionary *params = [NSMutableDictionary dictionaryWithDictionary:@{@"Page": @(page)}];
     post(@"GetContests",params,handler);
 }
 

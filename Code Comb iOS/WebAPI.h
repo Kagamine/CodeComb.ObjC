@@ -12,7 +12,7 @@
 
 typedef void (^WebAPICompletionHandler)(NSInteger code,BOOL success,NSString *info,id data);
 
-+ (void)getContestsInPage:(NSNumber *)page completionHandler:(WebAPICompletionHandler)handler;
++ (void)getContestsInPage:(NSInteger)page completionHandler:(WebAPICompletionHandler)handler;
 + (void)authWithUsername:(NSString*)username password:(NSString*)password completionHandler:(WebAPICompletionHandler)handler;
 + (void)getClarificationsOfContest:(NSInteger)contestID completionHandler:(WebAPICompletionHandler)handler;
 + (void)responseClarification:(NSInteger)clarificationID answer:(NSString*)answer status:(NSInteger)status completionHandler:(WebAPICompletionHandler)handler;
