@@ -145,6 +145,12 @@ static void post(NSString *path, NSMutableDictionary *params, WebAPICompletionHa
     post(@"FindContacts", params, handler);
 }
 
++ (void)loginByQRCode:(NSString *)qrcode completitionHandler:(WebAPICompletionHandler)handler
+{
+    NSMutableDictionary *params = [NSMutableDictionary dictionaryWithDictionary:@{@"BarCode": qrcode}];
+    post(@"LoginByBarCode", params, handler);
+}
+
 #pragma mark - Helper methods
 
 + (NSDate *)deserializeJsonDateString: (NSString *)jsonDateString

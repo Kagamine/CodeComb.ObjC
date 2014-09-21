@@ -7,7 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ZBarSDK.h"
 
-@interface ProfileController : UITableViewController
-
+@interface ProfileController : UITableViewController<UINavigationControllerDelegate,UIImagePickerControllerDelegate,ZBarReaderDelegate>
+{
+    int num;
+    BOOL upOrdown;
+    NSTimer * timer;
+    
+}
+@property (nonatomic, strong) UIImageView * line;
 @end

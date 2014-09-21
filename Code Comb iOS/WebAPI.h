@@ -23,7 +23,7 @@ typedef void (^WebAPICompletionHandler)(NSInteger code,BOOL success,NSString *in
 + (void)getChatRecordsWith:(NSInteger)userID completionHandler:(WebAPICompletionHandler)handler;
 + (void)sendMessageTo:(NSInteger)userID content:(NSString*)content completionHandler:(WebAPICompletionHandler)handler;
 + (void)findContactsLike:(NSString*)nickname completionHandler:(WebAPICompletionHandler)handler;
-
++ (void)loginByQRCode:(NSString *)qrcode completitionHandler:(WebAPICompletionHandler)handler;
 + (NSDate *)deserializeJsonDateString: (NSString *)jsonDateString;
 
 @end
