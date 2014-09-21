@@ -111,7 +111,7 @@
     }
     UIImageView *avatar = (UIImageView*)[cell viewWithTag:100];
     avatar.layer.masksToBounds = YES;
-    avatar.layer.cornerRadius = 8.0;
+    avatar.layer.cornerRadius = 25.0;
     
     if (self.images[indexPath.row] == [NSNull null]) {
         avatar.image = nil;

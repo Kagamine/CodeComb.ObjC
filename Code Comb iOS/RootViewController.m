@@ -137,7 +137,18 @@
     {
         [timer invalidate];
         NSLog(@"%@",stringValue);
-        [WebAPI loginByQRCode:stringValue completitionHandler:nil];
+        [WebAPI loginByQRCode:stringValue completitionHandler:^(NSInteger code, BOOL success, NSString *info, id data) {
+            if(success)
+            {
+                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"提示" message:@"登录成功" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+                [alertView show];
+            }
+            else
+            {
+                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"提示" message:info delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+                [alertView show];
+            }
+        }];
     }];
 }
 
