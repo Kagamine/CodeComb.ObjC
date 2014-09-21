@@ -185,6 +185,9 @@
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" tag="101" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Code Comb" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1jR-JW-slX">
                                             <rect key="frame" x="70" y="8" width="210" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="qOQ-hr-V59"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
@@ -192,7 +195,7 @@
                                         <label opaque="NO" userInteractionEnabled="NO" tag="102" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We Build Magics" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xbp-0M-nNb">
                                             <rect key="frame" x="70" y="30" width="210" height="21"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="21" id="vsZ-UF-0b6"/>
+                                                <constraint firstAttribute="height" constant="21" id="XVb-DK-gSs"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -201,7 +204,8 @@
                                         <label opaque="NO" userInteractionEnabled="NO" tag="103" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zlf-Hu-5QN">
                                             <rect key="frame" x="237" y="19" width="42" height="21"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="42" id="WOU-N9-2Oi"/>
+                                                <constraint firstAttribute="width" constant="42" id="cZM-Qm-yLO"/>
+                                                <constraint firstAttribute="height" constant="21" id="qDx-4o-PEI"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="1" green="0.50196078430000002" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -210,22 +214,22 @@
                                         <imageView userInteractionEnabled="NO" tag="100" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IAW-Cn-OKk">
                                             <rect key="frame" x="10" y="5" width="50" height="50"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="50" id="5dK-R8-fUA"/>
-                                                <constraint firstAttribute="width" constant="50" id="ZMU-vL-Lug"/>
+                                                <constraint firstAttribute="height" constant="50" id="mc0-Nc-Hv6"/>
+                                                <constraint firstAttribute="width" constant="50" id="q23-6L-Dvr"/>
                                             </constraints>
                                         </imageView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="1jR-JW-slX" firstAttribute="leading" secondItem="IAW-Cn-OKk" secondAttribute="trailing" constant="10" id="3ZS-Ho-uNx"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="1jR-JW-slX" secondAttribute="trailing" constant="-1" id="5ca-4d-yqc"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="Xbp-0M-nNb" secondAttribute="trailing" constant="-1" id="CL8-ZK-JSj"/>
-                                        <constraint firstItem="1jR-JW-slX" firstAttribute="top" secondItem="XUq-9y-5pb" secondAttribute="topMargin" id="E06-vH-VTT"/>
-                                        <constraint firstItem="IAW-Cn-OKk" firstAttribute="leading" secondItem="XUq-9y-5pb" secondAttribute="leadingMargin" constant="2" id="MB5-dl-kyi"/>
-                                        <constraint firstItem="Xbp-0M-nNb" firstAttribute="leading" secondItem="IAW-Cn-OKk" secondAttribute="trailing" constant="10" id="T1V-b2-fae"/>
-                                        <constraint firstItem="Xbp-0M-nNb" firstAttribute="top" secondItem="1jR-JW-slX" secondAttribute="bottom" constant="1" id="af8-kt-VAO"/>
-                                        <constraint firstItem="IAW-Cn-OKk" firstAttribute="top" secondItem="XUq-9y-5pb" secondAttribute="topMargin" constant="-3" id="hDL-2c-PM2"/>
-                                        <constraint firstItem="zlf-Hu-5QN" firstAttribute="top" secondItem="XUq-9y-5pb" secondAttribute="topMargin" constant="11" id="ldr-Lr-mZi"/>
-                                        <constraint firstItem="zlf-Hu-5QN" firstAttribute="trailing" secondItem="XUq-9y-5pb" secondAttribute="trailingMargin" id="uZW-Ie-h6T"/>
+                                        <constraint firstItem="Xbp-0M-nNb" firstAttribute="leading" secondItem="IAW-Cn-OKk" secondAttribute="trailing" constant="10" id="1eb-HH-yrR"/>
+                                        <constraint firstItem="1jR-JW-slX" firstAttribute="top" secondItem="XUq-9y-5pb" secondAttribute="topMargin" id="3bg-Yf-ZHu"/>
+                                        <constraint firstItem="zlf-Hu-5QN" firstAttribute="top" secondItem="XUq-9y-5pb" secondAttribute="topMargin" constant="11" id="WYZ-YN-ufU"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="1jR-JW-slX" secondAttribute="trailing" constant="-1" id="bEE-69-NA2"/>
+                                        <constraint firstItem="Xbp-0M-nNb" firstAttribute="top" secondItem="1jR-JW-slX" secondAttribute="bottom" constant="1" id="cFl-3E-8gG"/>
+                                        <constraint firstItem="IAW-Cn-OKk" firstAttribute="top" secondItem="XUq-9y-5pb" secondAttribute="topMargin" constant="-3" id="es4-Z3-Bww"/>
+                                        <constraint firstItem="zlf-Hu-5QN" firstAttribute="trailing" secondItem="XUq-9y-5pb" secondAttribute="trailingMargin" id="l06-v0-PWy"/>
+                                        <constraint firstItem="1jR-JW-slX" firstAttribute="leading" secondItem="IAW-Cn-OKk" secondAttribute="trailing" constant="10" id="scT-xy-Ulu"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="Xbp-0M-nNb" secondAttribute="trailing" constant="-1" id="yQJ-pd-RHl"/>
+                                        <constraint firstItem="IAW-Cn-OKk" firstAttribute="leading" secondItem="XUq-9y-5pb" secondAttribute="leadingMargin" constant="2" id="yXr-vh-kQe"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
