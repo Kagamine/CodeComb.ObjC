@@ -10,6 +10,7 @@
 #import "WebAPI.h"
 #import "ChatController.h"
 #import "SearchContactDelegate.h"
+#import "QuartzCore/QuartzCore.h"
 
 @interface ContactListController ()
 
@@ -97,17 +98,26 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Contact" forIndexPath:indexPath];
     
     NSDictionary *contact = self.contacts[indexPath.row];
-    cell.textLabel.text = contact[@"Nickname"];
+    UILabel *nameLabel = (UILabel *)[cell viewWithTag:101];
+    nameLabel.text = contact[@"Nickname"];
+    UILabel *mottoLabel = (UILabel *)[cell viewWithTag:102];
+    mottoLabel.text = contact[@"Motto"];
+    UILabel *unreadLabel = (UILabel *)[cell viewWithTag:103];
+    //cell.textLabel.text = contact[@"Nickname"];
     if ([contact[@"UnreadMessageCount"] integerValue] > 0) {
-        cell.detailTextLabel.text = [contact[@"UnreadMessageCount"] stringValue];
+        unreadLabel.text = [contact[@"UnreadMessageCount"] stringValue];
     } else {
-        cell.detailTextLabel.text = @"";
+        unreadLabel.text = @"";
     }
+    UIImageView *avatar = (UIImageView*)[cell viewWithTag:100];
+    avatar.layer.masksToBounds = YES;
+    avatar.layer.cornerRadius = 8.0;
+    [avatar setFrame:CGRectMake(0, 0, 50, 50)];
     
     if (self.images[indexPath.row] == [NSNull null]) {
-        cell.imageView.image = nil;
+        avatar.image = nil;
     } else {
-        cell.imageView.image = self.images[indexPath.row];
+        avatar.image = self.images[indexPath.row];
     }
     
     return cell;
