@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="tpw-hB-a1E">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="tpw-hB-a1E">
     <dependencies>
         <deployment defaultVersion="1792" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
-        <!--登录-->
+        <!--Login Controller - 登录-->
         <scene sceneID="WQJ-sJ-x0m">
             <objects>
                 <viewController title="登录" id="tpw-hB-a1E" customClass="LoginController" sceneMemberID="viewController">
@@ -90,8 +91,8 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="We Build Magics" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yKC-HI-rrl">
-                                <rect key="frame" x="107" y="85" width="129" height="21"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We Build Magics" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yKC-HI-rrl">
+                                <rect key="frame" x="110" y="114" width="101" height="16"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -158,7 +159,7 @@
             </objects>
             <point key="canvasLocation" x="2341" y="793"/>
         </scene>
-        <!--我的消息-->
+        <!--Contact List Controller - 我的消息-->
         <scene sceneID="Fec-Dz-bHa">
             <objects>
                 <tableViewController id="lzN-gq-qTw" customClass="ContactListController" sceneMemberID="viewController">
@@ -176,34 +177,48 @@
                         </searchBar>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Contact" rowHeight="60" id="Rof-LZ-nDp">
-                                <rect key="frame" x="0.0" y="130" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="130" width="320" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Rof-LZ-nDp" id="XUq-9y-5pb">
-                                    <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="287" height="59"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" tag="101" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Code Comb" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1jR-JW-slX">
-                                            <rect key="frame" x="70" y="8" width="210" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="101" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Code Comb" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1jR-JW-slX">
+                                            <rect key="frame" x="78" y="9" width="94" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" tag="102" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="We Build Magics" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xbp-0M-nNb">
-                                            <rect key="frame" x="70" y="30" width="210" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="102" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We Build Magics" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xbp-0M-nNb">
+                                            <rect key="frame" x="78" y="30" width="101" height="16"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" tag="103" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zlf-Hu-5QN">
-                                            <rect key="frame" x="237" y="19" width="42" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="103" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zlf-Hu-5QN">
+                                            <rect key="frame" x="257" y="19" width="10" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="1" green="0.50196078430000002" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" tag="100" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IAW-Cn-OKk">
-                                            <rect key="frame" x="10" y="5" width="50" height="50"/>
+                                        <imageView userInteractionEnabled="NO" tag="100" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IAW-Cn-OKk">
+                                            <rect key="frame" x="20" y="5" width="50" height="50"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="50" id="aUL-P5-XeT"/>
+                                                <constraint firstAttribute="height" constant="50" id="vFJ-w1-nyV"/>
+                                            </constraints>
                                         </imageView>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="IAW-Cn-OKk" firstAttribute="leading" secondItem="XUq-9y-5pb" secondAttribute="leading" constant="20" id="Jkg-Wb-2zW"/>
+                                        <constraint firstAttribute="centerY" secondItem="zlf-Hu-5QN" secondAttribute="centerY" id="ZIN-Ex-RkS"/>
+                                        <constraint firstItem="1jR-JW-slX" firstAttribute="leading" secondItem="IAW-Cn-OKk" secondAttribute="trailing" constant="8" id="ZLX-79-dmE"/>
+                                        <constraint firstAttribute="centerY" secondItem="Xbp-0M-nNb" secondAttribute="top" id="l7d-8O-Ky6"/>
+                                        <constraint firstAttribute="centerY" secondItem="IAW-Cn-OKk" secondAttribute="centerY" id="lnC-8n-uc9"/>
+                                        <constraint firstAttribute="trailing" secondItem="zlf-Hu-5QN" secondAttribute="trailing" constant="20" id="sqz-v8-aOM"/>
+                                        <constraint firstItem="Xbp-0M-nNb" firstAttribute="leading" secondItem="IAW-Cn-OKk" secondAttribute="trailing" constant="8" id="vJA-MX-R6h"/>
+                                        <constraint firstAttribute="centerY" secondItem="1jR-JW-slX" secondAttribute="bottom" id="wFn-Tz-xdk"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <segue destination="U8b-Zx-VDS" kind="modal" identifier="Chat" modalTransitionStyle="crossDissolve" id="HnX-GG-atZ"/>
@@ -251,7 +266,7 @@
             </objects>
             <point key="canvasLocation" x="4233" y="-113"/>
         </scene>
-        <!--比赛-->
+        <!--Contest List Controller - 比赛-->
         <scene sceneID="ftJ-vF-w6l">
             <objects>
                 <tableViewController id="QLA-HD-tb9" customClass="ContestListController" sceneMemberID="viewController">
@@ -347,7 +362,7 @@
             </objects>
             <point key="canvasLocation" x="3411" y="-810"/>
         </scene>
-        <!--提问列表-->
+        <!--Clarification List Controller - 提问列表-->
         <scene sceneID="oiJ-re-inn">
             <objects>
                 <tableViewController id="ezi-jz-Dgf" customClass="ClarificationListController" sceneMemberID="viewController">
@@ -443,7 +458,7 @@
             </objects>
             <point key="canvasLocation" x="3813" y="-810"/>
         </scene>
-        <!--具体提问-->
+        <!--Clarification Detail Controller - 具体提问-->
         <scene sceneID="38v-d4-55r">
             <objects>
                 <viewController id="cgB-K3-Z9a" customClass="ClarificationDetailController" sceneMemberID="viewController">
@@ -557,7 +572,7 @@
             </objects>
             <point key="canvasLocation" x="4233" y="-810"/>
         </scene>
-        <!--比赛-->
+        <!--Navigation Controller - 比赛-->
         <scene sceneID="13Y-JN-UhQ">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="acq-WI-UrO" customClass="NavigationController" sceneMemberID="viewController">
@@ -576,7 +591,7 @@
             </objects>
             <point key="canvasLocation" x="2885" y="-810"/>
         </scene>
-        <!--广播消息-->
+        <!--Broadcast Controller - 广播消息-->
         <scene sceneID="WKe-0g-J4b">
             <objects>
                 <viewController id="sNM-ZL-LKo" customClass="BroadcastController" sceneMemberID="viewController">
@@ -646,7 +661,7 @@
             </objects>
             <point key="canvasLocation" x="3411" y="553"/>
         </scene>
-        <!--消息-->
+        <!--Navigation Controller - 消息-->
         <scene sceneID="r1Q-xt-skj">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="PwR-zL-VTv" customClass="NavigationController" sceneMemberID="viewController">
@@ -665,7 +680,7 @@
             </objects>
             <point key="canvasLocation" x="2885" y="-113"/>
         </scene>
-        <!--个人中心-->
+        <!--Profile Controller - 个人中心-->
         <scene sceneID="R6E-3H-YXN">
             <objects>
                 <tableViewController id="aDN-Pc-AFp" customClass="ProfileController" sceneMemberID="viewController">
@@ -809,7 +824,7 @@
             </objects>
             <point key="canvasLocation" x="3411" y="1227"/>
         </scene>
-        <!--广播-->
+        <!--Navigation Controller - 广播-->
         <scene sceneID="EZ9-d7-DI6">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="g2z-en-dJu" sceneMemberID="viewController">
@@ -847,7 +862,7 @@
             </objects>
             <point key="canvasLocation" x="3813" y="-113"/>
         </scene>
-        <!--个人-->
+        <!--Navigation Controller - 个人-->
         <scene sceneID="P95-CL-Rm0">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dH4-Gu-IYv" customClass="NavigationController" sceneMemberID="viewController">
