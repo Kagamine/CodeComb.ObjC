@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="tpw-hB-a1E">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="tpw-hB-a1E">
     <dependencies>
         <deployment defaultVersion="1792" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
-        <!--Login Controller - 登录-->
+        <!--登录-->
         <scene sceneID="WQJ-sJ-x0m">
             <objects>
                 <viewController title="登录" id="tpw-hB-a1E" customClass="LoginController" sceneMemberID="viewController">
@@ -159,7 +159,7 @@
             </objects>
             <point key="canvasLocation" x="2341" y="793"/>
         </scene>
-        <!--Contact List Controller - 我的消息-->
+        <!--我的消息-->
         <scene sceneID="Fec-Dz-bHa">
             <objects>
                 <tableViewController id="lzN-gq-qTw" customClass="ContactListController" sceneMemberID="viewController">
@@ -266,7 +266,7 @@
             </objects>
             <point key="canvasLocation" x="4233" y="-113"/>
         </scene>
-        <!--Contest List Controller - 比赛-->
+        <!--比赛-->
         <scene sceneID="ftJ-vF-w6l">
             <objects>
                 <tableViewController id="QLA-HD-tb9" customClass="ContestListController" sceneMemberID="viewController">
@@ -362,7 +362,7 @@
             </objects>
             <point key="canvasLocation" x="3411" y="-810"/>
         </scene>
-        <!--Clarification List Controller - 提问列表-->
+        <!--提问列表-->
         <scene sceneID="oiJ-re-inn">
             <objects>
                 <tableViewController id="ezi-jz-Dgf" customClass="ClarificationListController" sceneMemberID="viewController">
@@ -458,7 +458,7 @@
             </objects>
             <point key="canvasLocation" x="3813" y="-810"/>
         </scene>
-        <!--Clarification Detail Controller - 具体提问-->
+        <!--具体提问-->
         <scene sceneID="38v-d4-55r">
             <objects>
                 <viewController id="cgB-K3-Z9a" customClass="ClarificationDetailController" sceneMemberID="viewController">
@@ -572,7 +572,7 @@
             </objects>
             <point key="canvasLocation" x="4233" y="-810"/>
         </scene>
-        <!--Navigation Controller - 比赛-->
+        <!--比赛-->
         <scene sceneID="13Y-JN-UhQ">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="acq-WI-UrO" customClass="NavigationController" sceneMemberID="viewController">
@@ -591,7 +591,7 @@
             </objects>
             <point key="canvasLocation" x="2885" y="-810"/>
         </scene>
-        <!--Broadcast Controller - 广播消息-->
+        <!--广播消息-->
         <scene sceneID="WKe-0g-J4b">
             <objects>
                 <viewController id="sNM-ZL-LKo" customClass="BroadcastController" sceneMemberID="viewController">
@@ -661,7 +661,7 @@
             </objects>
             <point key="canvasLocation" x="3411" y="553"/>
         </scene>
-        <!--Navigation Controller - 消息-->
+        <!--消息-->
         <scene sceneID="r1Q-xt-skj">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="PwR-zL-VTv" customClass="NavigationController" sceneMemberID="viewController">
@@ -680,7 +680,7 @@
             </objects>
             <point key="canvasLocation" x="2885" y="-113"/>
         </scene>
-        <!--Profile Controller - 个人中心-->
+        <!--个人中心-->
         <scene sceneID="R6E-3H-YXN">
             <objects>
                 <tableViewController id="aDN-Pc-AFp" customClass="ProfileController" sceneMemberID="viewController">
@@ -824,7 +824,7 @@
             </objects>
             <point key="canvasLocation" x="3411" y="1227"/>
         </scene>
-        <!--Navigation Controller - 广播-->
+        <!--广播-->
         <scene sceneID="EZ9-d7-DI6">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="g2z-en-dJu" sceneMemberID="viewController">
@@ -862,7 +862,7 @@
             </objects>
             <point key="canvasLocation" x="3813" y="-113"/>
         </scene>
-        <!--Navigation Controller - 个人-->
+        <!--个人-->
         <scene sceneID="P95-CL-Rm0">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dH4-Gu-IYv" customClass="NavigationController" sceneMemberID="viewController">

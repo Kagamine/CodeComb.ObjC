@@ -42,7 +42,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)viewDidAppear:(BOOL)animated
+- (void)viewWillAppear:(BOOL)animated
 {
     [WebAPI getProfileWithCompletionHandler:^(NSInteger code, BOOL success, NSString *info, id data) {
         if (!success) {
@@ -59,6 +59,8 @@
             UIImage *avatar = [UIImage imageWithData:data];
             dispatch_async(dispatch_get_main_queue(), ^{
                 self.imgAvatar.image = avatar;
+                self.imgAvatar.layer.masksToBounds = YES;
+                self.imgAvatar.layer.cornerRadius = 50.0;
             });
         }] resume];
     }];
