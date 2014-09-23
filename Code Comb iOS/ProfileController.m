@@ -60,7 +60,7 @@
             dispatch_async(dispatch_get_main_queue(), ^{
                 self.imgAvatar.image = avatar;
                 self.imgAvatar.layer.masksToBounds = YES;
-                self.imgAvatar.layer.cornerRadius = 50.0;
+                self.imgAvatar.layer.cornerRadius = 30.0;
             });
         }] resume];
     }];
