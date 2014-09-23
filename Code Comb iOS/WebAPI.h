@@ -25,5 +25,17 @@ typedef void (^WebAPICompletionHandler)(NSInteger code,BOOL success,NSString *in
 + (void)findContactsLike:(NSString*)nickname completionHandler:(WebAPICompletionHandler)handler;
 + (void)loginByQRCode:(NSString *)qrcode completitionHandler:(WebAPICompletionHandler)handler;
 + (NSDate *)deserializeJsonDateString: (NSString *)jsonDateString;
++ (void) createGroup:(NSString *)title description:(NSString *)description joinMethod:(NSInteger)joinMethod  completionHandler:(WebAPICompletionHandler)handler;
++ (void) modifyGroup: (NSInteger)groupID title:(NSString *)title description:(NSString *)description joinMethod:(NSInteger)joinMethod  completionHandler:(WebAPICompletionHandler)handler;
++ (void) kickGroupMember: (NSInteger)groupID userID:(NSInteger)userID completitionHandler:(WebAPICompletionHandler)handler;
++ (void) joinGroup: (NSInteger)groupID message:(NSString *)message completitionHandler:(WebAPICompletionHandler)handler;
++ (void) getGroupApplications: (NSInteger)groupID page:(NSInteger)page completitionHandler:(WebAPICompletionHandler)handler;
++ (void) responseGroupApplication: (NSInteger) applicationID status:(NSInteger)status response:(NSString *)response completitionHandler:(WebAPICompletionHandler)handler;
++ (void) getGroupChat: (NSInteger) groupID page:(NSInteger) page completitionHandler:(WebAPICompletionHandler)handler;
++ (void) sendGroupMessage: (NSInteger)groupID message: (NSString *)message completitionHandler:(WebAPICompletionHandler)handler;
++ (void) quitGroup: (NSInteger)groupID completitionHandler:(WebAPICompletionHandler)handler;
++ (void) getGroups: (NSInteger)page completitionHandler:(WebAPICompletionHandler)handler;
++ (void) getGroupHomeworks: (NSInteger)groupID page:(NSInteger)page completitionHandler:(WebAPICompletionHandler)handler;
++ (void) getGroupHomeworkStandings: (NSInteger)groupHomeworkID completitionHandler:(WebAPICompletionHandler)handler;
 
 @end

@@ -33,6 +33,7 @@
 		01ACAEE319C541D5000F686E /* BroadcastController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01ACAEE219C541D5000F686E /* BroadcastController.m */; };
 		01ACAEE619C54849000F686E /* ChatController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01ACAEE519C54849000F686E /* ChatController.m */; };
 		713FE6EC19D147D30092948E /* libzbar.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 71D524F819CEBAFE00419A0C /* libzbar.a */; };
+		713FE6EF19D15AAD0092948E /* GroupController.m in Sources */ = {isa = PBXBuildFile; fileRef = 713FE6EE19D15AAD0092948E /* GroupController.m */; };
 		71D524FF19CEBAFE00419A0C /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 71D524E019CEBAFE00419A0C /* .gitignore */; };
 		71D5250119CEBAFE00419A0C /* README in Resources */ = {isa = PBXBuildFile; fileRef = 71D524F919CEBAFE00419A0C /* README */; };
 		71D5250219CEBAFE00419A0C /* zbar-back.png in Resources */ = {isa = PBXBuildFile; fileRef = 71D524FB19CEBAFE00419A0C /* zbar-back.png */; };
@@ -98,6 +99,8 @@
 		01ACAEE419C54849000F686E /* ChatController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatController.h; sourceTree = "<group>"; };
 		01ACAEE519C54849000F686E /* ChatController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatController.m; sourceTree = "<group>"; };
 		351B2DF70A894E88B0A12EA7 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		713FE6ED19D15A8F0092948E /* GroupController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GroupController.h; sourceTree = "<group>"; };
+		713FE6EE19D15AAD0092948E /* GroupController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GroupController.m; sourceTree = "<group>"; };
 		71D524E019CEBAFE00419A0C /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		71D524E419CEBAFE00419A0C /* Decoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Decoder.h; sourceTree = "<group>"; };
 		71D524E519CEBAFE00419A0C /* Exception.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Exception.h; sourceTree = "<group>"; };
@@ -232,6 +235,8 @@
 				011B870219CDA02B0035FA01 /* SearchContactDelegate.m */,
 				71D5250C19CEC29500419A0C /* RootViewController.h */,
 				71D5250D19CEC29500419A0C /* RootViewController.m */,
+				713FE6EE19D15AAD0092948E /* GroupController.m */,
+				713FE6ED19D15A8F0092948E /* GroupController.h */,
 			);
 			path = "Code Comb iOS";
 			sourceTree = "<group>";
@@ -478,6 +483,7 @@
 				015AB01919C2B76700864EFE /* ClarificationDetailController.m in Sources */,
 				01ACAEE319C541D5000F686E /* BroadcastController.m in Sources */,
 				015AB00719C1A7A800864EFE /* NavigationController.m in Sources */,
+				713FE6EF19D15AAD0092948E /* GroupController.m in Sources */,
 				01761C1719BB3FEF000C4998 /* AppDelegate.m in Sources */,
 				015AB00A19C1CAE100864EFE /* ContestListController.m in Sources */,
 				71D5250E19CEC29500419A0C /* RootViewController.m in Sources */,

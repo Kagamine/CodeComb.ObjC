@@ -205,6 +205,24 @@ static void post(NSString *path, NSMutableDictionary *params, WebAPICompletionHa
     post(@"QuitGroup", params, handler);
 }
 
++ (void) getGroups: (NSInteger)page completitionHandler:(WebAPICompletionHandler)handler
+{
+    NSMutableDictionary *params = [NSMutableDictionary dictionaryWithDictionary:@{@"Page": @(page)}];
+    post(@"GetGroups", params, handler);
+}
+
++ (void) getGroupHomeworks: (NSInteger)groupID page:(NSInteger)page completitionHandler:(WebAPICompletionHandler)handler
+{
+    NSMutableDictionary *params = [NSMutableDictionary dictionaryWithDictionary:@{@"GroupID": @(groupID), @"Page": @(page)}];
+    post(@"GetGroupHomeworks", params, handler);
+}
+
++ (void) getGroupHomeworkStandings: (NSInteger)groupHomeworkID completitionHandler:(WebAPICompletionHandler)handler
+{
+    NSMutableDictionary *params = [NSMutableDictionary dictionaryWithDictionary:@{@"GroupHomeworkID": @(groupHomeworkID)}];
+    post(@"GetGroupHomeworkStandings", params, handler);
+}
+
 #pragma mark - Helper methods
 
 + (NSDate *)deserializeJsonDateString: (NSString *)jsonDateString
