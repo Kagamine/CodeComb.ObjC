@@ -151,6 +151,60 @@ static void post(NSString *path, NSMutableDictionary *params, WebAPICompletionHa
     post(@"LoginByBarCode", params, handler);
 }
 
++ (void) createGroup:(NSString *)title description:(NSString *)description joinMethod:(NSInteger)joinMethod  completionHandler:(WebAPICompletionHandler)handler
+{
+    NSMutableDictionary *params = [NSMutableDictionary dictionaryWithDictionary:@{@"Title": title, @"Description": description, @"JoinMethod": @(joinMethod)}];
+    post(@"CreateGroup", params, handler);
+}
+
++ (void) modifyGroup: (NSInteger)groupID title:(NSString *)title description:(NSString *)description joinMethod:(NSInteger)joinMethod  completionHandler:(WebAPICompletionHandler)handler
+{
+    NSMutableDictionary *params = [NSMutableDictionary dictionaryWithDictionary:@{@"GroupID": @(groupID), @"Title": title, @"Description": description, @"JoinMethod": @(joinMethod)}];
+    post(@"ModifyGroup", params, handler);
+}
+
++ (void) kickGroupMember: (NSInteger)groupID userID:(NSInteger)userID completitionHandler:(WebAPICompletionHandler)handler
+{
+    NSMutableDictionary *params = [NSMutableDictionary dictionaryWithDictionary:@{@"GroupID": @(groupID), @"UserID": @(userID)}];
+    post(@"KickGroupMember", params, handler);
+}
+
++ (void) joinGroup: (NSInteger)groupID message:(NSString *)message completitionHandler:(WebAPICompletionHandler)handler
+{
+    NSMutableDictionary *params = [NSMutableDictionary dictionaryWithDictionary:@{@"GroupID": @(groupID), @"Message": message}];
+    post(@"JoinGroup", params, handler);
+}
+
++ (void) getGroupApplications: (NSInteger)groupID page:(NSInteger)page completitionHandler:(WebAPICompletionHandler)handler
+{
+    NSMutableDictionary *params = [NSMutableDictionary dictionaryWithDictionary:@{@"GroupID": @(groupID), @"Page": @(page)}];
+    post(@"GetGroupApplications", params, handler);
+}
+
++ (void) responseGroupApplication: (NSInteger) applicationID status:(NSInteger)status response:(NSString *)response completitionHandler:(WebAPICompletionHandler)handler
+{
+    NSMutableDictionary *params = [NSMutableDictionary dictionaryWithDictionary:@{@"ApplicationID": @(applicationID), @"Response": response}];
+    post(@"ResponseGroupApplication", params, handler);
+}
+
++ (void) getGroupChat: (NSInteger) groupID page:(NSInteger) page completitionHandler:(WebAPICompletionHandler)handler
+{
+    NSMutableDictionary *params = [NSMutableDictionary dictionaryWithDictionary:@{@"GroupID": @(groupID), @"Page": @(page)}];
+    post(@"GetGroupChat", params, handler);
+}
+
++ (void) sendGroupMessage: (NSInteger)groupID message: (NSString *)message completitionHandler:(WebAPICompletionHandler)handler
+{
+    NSMutableDictionary *params = [NSMutableDictionary dictionaryWithDictionary:@{@"GroupID": @(groupID), @"message": message}];
+    post(@"SendGroupMessage", params, handler);
+}
+
++ (void) quitGroup: (NSInteger)groupID completitionHandler:(WebAPICompletionHandler)handler
+{
+    NSMutableDictionary *params = [NSMutableDictionary dictionaryWithDictionary:@{@"GroupID": @(groupID)}];
+    post(@"QuitGroup", params, handler);
+}
+
 #pragma mark - Helper methods
 
 + (NSDate *)deserializeJsonDateString: (NSString *)jsonDateString
