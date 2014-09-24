@@ -968,14 +968,14 @@
         <scene sceneID="Vde-nr-2P9">
             <objects>
                 <tableViewController id="6EY-RA-dqy" customClass="CreateGroupController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="M2A-LP-p7R">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="M2A-LP-p7R">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <sections>
                             <tableViewSection headerTitle="基本信息" id="pe3-bW-bzr">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Y7l-Gz-3a5">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="Y7l-Gz-3a5">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Y7l-Gz-3a5" id="Rbx-vQ-GDG">
                                             <autoresizingMask key="autoresizingMask"/>
@@ -1007,7 +1007,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="LxK-ZW-BAW">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="LxK-ZW-BAW">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LxK-ZW-BAW" id="KJK-Y5-Upw">
@@ -1044,7 +1044,7 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="入群方式" id="U8F-g0-W1K">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="csd-b2-4rb">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="everyone" id="csd-b2-4rb">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="csd-b2-4rb" id="Pel-rt-NEW">
                                             <autoresizingMask key="autoresizingMask"/>
@@ -1066,7 +1066,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="VOt-fC-J6f">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="message" id="VOt-fC-J6f">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="VOt-fC-J6f" id="34v-W4-NSJ">
                                             <autoresizingMask key="autoresizingMask"/>
@@ -1088,7 +1088,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="JyM-of-wSO">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="forbidden" id="JyM-of-wSO">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JyM-of-wSO" id="ogF-Ba-olS">
                                             <autoresizingMask key="autoresizingMask"/>
@@ -1145,6 +1145,10 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="创建群" id="nop-QJ-DI5"/>
+                    <connections>
+                        <outlet property="txtDescription" destination="YMV-KD-dK2" id="wye-uB-bOC"/>
+                        <outlet property="txtTitle" destination="XeT-m1-kA6" id="WMs-4B-O12"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Te-pA-zvW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

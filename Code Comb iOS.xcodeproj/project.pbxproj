@@ -32,9 +32,9 @@
 		01ACAEDD19C52BE9000F686E /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01ACAEDC19C52BE9000F686E /* AVFoundation.framework */; };
 		01ACAEE319C541D5000F686E /* BroadcastController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01ACAEE219C541D5000F686E /* BroadcastController.m */; };
 		01ACAEE619C54849000F686E /* ChatController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01ACAEE519C54849000F686E /* ChatController.m */; };
-		713FE6EC19D147D30092948E /* libzbar.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 71D524F819CEBAFE00419A0C /* libzbar.a */; };
 		713FE6EF19D15AAD0092948E /* GroupController.m in Sources */ = {isa = PBXBuildFile; fileRef = 713FE6EE19D15AAD0092948E /* GroupController.m */; };
 		713FE6F219D1739E0092948E /* CreateGroupController.m in Sources */ = {isa = PBXBuildFile; fileRef = 713FE6F119D1739E0092948E /* CreateGroupController.m */; };
+		71879B6519D241F000A9DD0F /* libzbar.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 71D524F819CEBAFE00419A0C /* libzbar.a */; };
 		71D524FF19CEBAFE00419A0C /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 71D524E019CEBAFE00419A0C /* .gitignore */; };
 		71D5250119CEBAFE00419A0C /* README in Resources */ = {isa = PBXBuildFile; fileRef = 71D524F919CEBAFE00419A0C /* README */; };
 		71D5250219CEBAFE00419A0C /* zbar-back.png in Resources */ = {isa = PBXBuildFile; fileRef = 71D524FB19CEBAFE00419A0C /* zbar-back.png */; };
@@ -145,7 +145,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				71D5250B19CEBBDC00419A0C /* libiconv.dylib in Frameworks */,
-				713FE6EC19D147D30092948E /* libzbar.a in Frameworks */,
+				71879B6519D241F000A9DD0F /* libzbar.a in Frameworks */,
 				71D5250919CEBBC900419A0C /* CoreVideo.framework in Frameworks */,
 				71D5250719CEBBB500419A0C /* CoreMedia.framework in Frameworks */,
 				01ACAEDD19C52BE9000F686E /* AVFoundation.framework in Frameworks */,
@@ -640,6 +640,9 @@
 					"$(PROJECT_DIR)/Code",
 					Comb,
 					iOS/ZBarSDK,
+					"$(PROJECT_DIR)/Code",
+					Comb,
+					iOS/ZBarSDK,
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -662,6 +665,9 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"$(PROJECT_DIR)/Code",
+					Comb,
+					iOS/ZBarSDK,
 					"$(PROJECT_DIR)/Code",
 					Comb,
 					iOS/ZBarSDK,
