@@ -34,8 +34,9 @@
 		01ACAEE619C54849000F686E /* ChatController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01ACAEE519C54849000F686E /* ChatController.m */; };
 		713FE6EF19D15AAD0092948E /* GroupController.m in Sources */ = {isa = PBXBuildFile; fileRef = 713FE6EE19D15AAD0092948E /* GroupController.m */; };
 		713FE6F219D1739E0092948E /* CreateGroupController.m in Sources */ = {isa = PBXBuildFile; fileRef = 713FE6F119D1739E0092948E /* CreateGroupController.m */; };
-		717A8D4119D2CF9A00806080 /* libzbar.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 71D524F819CEBAFE00419A0C /* libzbar.a */; };
 		71879B6819D26CA700A9DD0F /* GroupChatController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71879B6719D26CA700A9DD0F /* GroupChatController.m */; };
+		71A03F2D19D3C2B500EA9A62 /* GroupProfileController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71A03F2C19D3C2B500EA9A62 /* GroupProfileController.m */; };
+		71A03F2E19D3C2EB00EA9A62 /* libzbar.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 71D524F819CEBAFE00419A0C /* libzbar.a */; };
 		71D524FF19CEBAFE00419A0C /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 71D524E019CEBAFE00419A0C /* .gitignore */; };
 		71D5250119CEBAFE00419A0C /* README in Resources */ = {isa = PBXBuildFile; fileRef = 71D524F919CEBAFE00419A0C /* README */; };
 		71D5250219CEBAFE00419A0C /* zbar-back.png in Resources */ = {isa = PBXBuildFile; fileRef = 71D524FB19CEBAFE00419A0C /* zbar-back.png */; };
@@ -107,6 +108,8 @@
 		713FE6F119D1739E0092948E /* CreateGroupController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateGroupController.m; sourceTree = "<group>"; };
 		71879B6619D26C8100A9DD0F /* GroupChatController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GroupChatController.h; sourceTree = "<group>"; };
 		71879B6719D26CA700A9DD0F /* GroupChatController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GroupChatController.m; sourceTree = "<group>"; };
+		71A03F2B19D3C2B500EA9A62 /* GroupProfileController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GroupProfileController.h; sourceTree = "<group>"; };
+		71A03F2C19D3C2B500EA9A62 /* GroupProfileController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GroupProfileController.m; sourceTree = "<group>"; };
 		71D524E019CEBAFE00419A0C /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		71D524E419CEBAFE00419A0C /* Decoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Decoder.h; sourceTree = "<group>"; };
 		71D524E519CEBAFE00419A0C /* Exception.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Exception.h; sourceTree = "<group>"; };
@@ -148,7 +151,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				71D5250B19CEBBDC00419A0C /* libiconv.dylib in Frameworks */,
-				717A8D4119D2CF9A00806080 /* libzbar.a in Frameworks */,
+				71A03F2E19D3C2EB00EA9A62 /* libzbar.a in Frameworks */,
 				71D5250919CEBBC900419A0C /* CoreVideo.framework in Frameworks */,
 				71D5250719CEBBB500419A0C /* CoreMedia.framework in Frameworks */,
 				01ACAEDD19C52BE9000F686E /* AVFoundation.framework in Frameworks */,
@@ -247,6 +250,8 @@
 				713FE6F119D1739E0092948E /* CreateGroupController.m */,
 				71879B6619D26C8100A9DD0F /* GroupChatController.h */,
 				71879B6719D26CA700A9DD0F /* GroupChatController.m */,
+				71A03F2B19D3C2B500EA9A62 /* GroupProfileController.h */,
+				71A03F2C19D3C2B500EA9A62 /* GroupProfileController.m */,
 			);
 			path = "Code Comb iOS";
 			sourceTree = "<group>";
@@ -502,6 +507,7 @@
 				01761C1319BB3FEF000C4998 /* main.m in Sources */,
 				011B870319CDA02B0035FA01 /* SearchContactDelegate.m in Sources */,
 				015AB01319C2850B00864EFE /* ClarificationListController.m in Sources */,
+				71A03F2D19D3C2B500EA9A62 /* GroupProfileController.m in Sources */,
 				015AB01019C1E91F00864EFE /* LoginController.m in Sources */,
 				011B86FA19CD8E7A0035FA01 /* ProfileController.m in Sources */,
 			);
@@ -652,6 +658,9 @@
 					"$(PROJECT_DIR)/Code",
 					Comb,
 					iOS/ZBarSDK,
+					"$(PROJECT_DIR)/Code",
+					Comb,
+					iOS/ZBarSDK,
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -674,6 +683,9 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"$(PROJECT_DIR)/Code",
+					Comb,
+					iOS/ZBarSDK,
 					"$(PROJECT_DIR)/Code",
 					Comb,
 					iOS/ZBarSDK,

@@ -223,6 +223,12 @@ static void post(NSString *path, NSMutableDictionary *params, WebAPICompletionHa
     post(@"GetGroupHomeworkStandings", params, handler);
 }
 
++ (void) getGroupProfile: (NSInteger) groupID completitionHandler:(WebAPICompletionHandler)handler
+{
+    NSMutableDictionary *params = [NSMutableDictionary dictionaryWithDictionary:@{@"GroupID": @(groupID)}];
+    post(@"GetGroupProfile", params, handler);
+}
+
 #pragma mark - Helper methods
 
 + (NSDate *)deserializeJsonDateString: (NSString *)jsonDateString

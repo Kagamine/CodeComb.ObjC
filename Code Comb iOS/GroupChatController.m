@@ -6,6 +6,7 @@
 //  Copyright (c) 2014年 Code Comb. All rights reserved.
 //
 #import "GroupChatController.h"
+#import "GroupProfileController.h"
 #import <JSQMessages.h>
 #import "WebAPI.h"
 
@@ -265,6 +266,16 @@
                    layout:(JSQMessagesCollectionViewFlowLayout *)collectionViewLayout heightForCellBottomLabelAtIndexPath:(NSIndexPath *)indexPath
 {
     return 0.0f;
+}
+
+#pragma mark - Navigation
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"GroupProfile"]) {
+        GroupProfileController *controller = segue.destinationViewController;
+        [controller setGroupID:self.groupID];
+    }
 }
 
 @end

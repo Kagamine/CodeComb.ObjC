@@ -37,5 +37,6 @@ typedef void (^WebAPICompletionHandler)(NSInteger code,BOOL success,NSString *in
 + (void) getGroups: (NSInteger)page completitionHandler:(WebAPICompletionHandler)handler;
 + (void) getGroupHomeworks: (NSInteger)groupID page:(NSInteger)page completitionHandler:(WebAPICompletionHandler)handler;
 + (void) getGroupHomeworkStandings: (NSInteger)groupHomeworkID completitionHandler:(WebAPICompletionHandler)handler;
++ (void) getGroupProfile: (NSInteger) groupID completitionHandler:(WebAPICompletionHandler)handler;
 
 @end
