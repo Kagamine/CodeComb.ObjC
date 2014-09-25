@@ -29,6 +29,8 @@
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.imgGroupAvatar setImage: groupAvatar];
             [self.tableView reloadData];
+            [self.imgGroupAvatar.layer setMasksToBounds:YES];
+            [self.imgGroupAvatar.layer setCornerRadius:30.0];
         });
     }] resume];
 }
@@ -47,6 +49,7 @@
            self.txtGroupName.text = data[@"Title"];
            self.txtDescription.text = data[@"Description"];
            self.txtMemberCount.text = [data[@"MemberCount"] stringValue];
+           [self getGroupAvatar:[[NSURL alloc] initWithString:data[@"Icon"]]];
            [self.tableView reloadData];
        }
        else

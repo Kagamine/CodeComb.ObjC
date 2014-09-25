@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="tpw-hB-a1E">
     <dependencies>
+        <deployment defaultVersion="1792" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -1204,7 +1205,7 @@
             </objects>
             <point key="canvasLocation" x="4113" y="2202"/>
         </scene>
-        <!--Group Profile Controller-->
+        <!--群资料-->
         <scene sceneID="mkz-BH-3rU">
             <objects>
                 <tableViewController id="rOq-dM-ndL" customClass="GroupProfileController" sceneMemberID="viewController">
@@ -1373,7 +1374,7 @@
                             <outlet property="delegate" destination="rOq-dM-ndL" id="Rei-SP-ACV"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="g6e-FJ-dcO"/>
+                    <navigationItem key="navigationItem" title="群资料" id="g6e-FJ-dcO"/>
                     <connections>
                         <outlet property="imgGroupAvatar" destination="oOX-mk-se4" id="SQ1-9L-UMf"/>
                         <outlet property="txtDescription" destination="OSq-Nl-Trv" id="pCG-4D-7yl"/>
