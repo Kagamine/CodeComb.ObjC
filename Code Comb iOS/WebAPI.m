@@ -74,7 +74,7 @@ static void post(NSString *path, NSMutableDictionary *params, WebAPICompletionHa
 + (void)getContestsInPage:(NSInteger)page completionHandler:(WebAPICompletionHandler)handler
 {
     NSMutableDictionary *params = [NSMutableDictionary dictionaryWithDictionary:@{@"Page": @(page)}];
-    post(@"GetContests",params,handler);
+    post(@"GetManagedContests",params,handler);
 }
 
 + (void)authWithUsername:(NSString*)username password:(NSString*)password completionHandler:(WebAPICompletionHandler)handler

@@ -7,6 +7,7 @@
 //
 
 #import "GroupController.h"
+#import "GroupChatController.h"
 #import "WebAPI.h"
 #import "QuartzCore/QuartzCore.h"
 
@@ -34,6 +35,7 @@
 {
     [super viewDidLoad];
     self.tableView.tableFooterView = [[UIView alloc] init];
+    [self loadMore];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -47,7 +49,7 @@
     [[session dataTaskWithURL:url completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
         [self.images setObject:[UIImage imageWithData:data] atIndexedSubscript:index];
         dispatch_async(dispatch_get_main_queue(), ^{
-            [self.tableView reloadData];;
+            [self.tableView reloadData];
         });
     }] resume];
 }
@@ -74,6 +76,11 @@
         
         if ([data[@"List"] count] == 0) {
             self.loadOver = YES;
+        }
+        self.images = [NSMutableArray arrayWithCapacity:self.groups.count];
+        for (NSInteger i = 0; i < self.groups.count; i++) {
+            [self.images addObject:[NSNull null]];
+            [self startDownloadImageFrom:[NSURL URLWithString:self.groups[i][@"Icon"]] forIndex:i];
         }
         [self.tableView reloadData];
     }];
@@ -108,13 +115,14 @@
     UIImageView *avatar = (UIImageView*)[cell viewWithTag:100];
     avatar.layer.masksToBounds = YES;
     avatar.layer.cornerRadius = 20.0;
-    /*
+
     if (self.images[indexPath.row] == [NSNull null]) {
+        NSLog(@"missing icon");
         avatar.image = nil;
     } else {
+        NSLog(@"icon found");
         avatar.image = self.images[indexPath.row];
     }
-    */
     return cell;
 }
 
@@ -122,16 +130,13 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    /*
-    if ([segue.identifier isEqualToString:@"Chat"]) {
+    if ([segue.identifier isEqualToString:@"GroupChat"]) {
         UINavigationController *nav = segue.destinationViewController;
-        ChatController *controller = (ChatController *)[nav topViewController];
-        NSDictionary *contact = self.contacts[[self.tableView indexPathForSelectedRow].row];
-        controller.hisID = [contact[@"UserID"] integerValue];
-        controller.hisAvatarURL = [NSURL URLWithString:contact[@"AvatarURL"]];
-        controller.hisNickname = contact[@"Nickname"];
+        GroupChatController *controller = (GroupChatController *)[nav topViewController];
+        NSDictionary *group = self.groups[[self.tableView indexPathForSelectedRow].row];
+        controller.groupID = [group[@"ID"] integerValue];
+        controller.groupName = group[@"Title"];
     }
-    */
 }
 
 @end

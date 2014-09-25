@@ -25,7 +25,7 @@ NSIndexPath *checkedIndexPath;
     
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+- (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     if(indexPath.section == 1)
@@ -40,6 +40,7 @@ NSIndexPath *checkedIndexPath;
         UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
         [cell setAccessoryType:UITableViewCellAccessoryCheckmark];
         checkedIndexPath = indexPath;
+        joinMethod = indexPath.row;
     }
     else if(indexPath.section == 2)
     {

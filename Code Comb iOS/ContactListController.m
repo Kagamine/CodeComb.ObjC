@@ -70,7 +70,7 @@
     [[session dataTaskWithURL:url completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
         [self.images setObject:[UIImage imageWithData:data] atIndexedSubscript:index];
         dispatch_async(dispatch_get_main_queue(), ^{
-            [self.tableView reloadData];;
+            [self.tableView reloadData];
         });
     }] resume];
 }
